@@ -1,5 +1,3 @@
-cat > README.md << 'EOF'
-
 # sillydodo.net
 
 > Personal portfolio and passion project built with modern web technologies.
@@ -66,32 +64,13 @@ cat > README.md << 'EOF'
 
 ## How It All Works Together
 
-```
-┌─────────────────────────┐
-│   Next.js (Framework)   │  ← What you write code in
-└───────────┬─────────────┘
-            │
-┌───────────▼─────────────┐
-│   React (UI Library)    │  ← Manages components & state
-└───────────┬─────────────┘
-            │
-┌───────────▼─────────────┐
-│   React DOM (Bridge)    │  ← Converts to HTML/DOM
-└───────────┬─────────────┘
-            │
-┌───────────▼─────────────┐
-│   Browser DOM           │  ← Actual webpage users see
-└─────────────────────────┘
-
-        All running on:
-┌─────────────────────────┐
-│   Node.js (Runtime)     │  ← JavaScript execution environment
-└─────────────────────────┘
-
-        Deployed to:
-┌─────────────────────────┐
-│   Vercel (Cloud Host)   │  ← Global edge network
-└─────────────────────────┘
+```mermaid
+graph TD
+    A("[ YOU ]") -- "Writes code using..." --> B("Next.js (Framework)<br/>[React (UI Library)]")
+    B -- "...is compiled and run by..." --> C("Node.js (Runtime)")
+    C -- "...is deployed to..." --> D("Vercel (Cloud Host)")
+    D -- "...converts React code to HTML/DOM using..." --> E("React DOM (Bridge)")
+    E -- "...which is what the user's browser sees as the..." --> F("Browser DOM (Webpage)")
 ```
 
 ### What is the DOM?
@@ -107,10 +86,10 @@ The **DOM (Document Object Model)** is how browsers represent webpages as a tree
 
 Becomes this tree structure in memory:
 
-```
-div
- ├── h1 ("Hello")
- └── p ("World")
+```mermaid
+graph TD
+    A("div") --> B("h1 (&quot;Hello&quot;)")
+    A --> C("p (&quot;World&quot;)")
 ```
 
 **Why it matters:**
@@ -137,7 +116,7 @@ npm --version
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/Jeenil/sillydodo.git
+git clone [https://github.com/Jeenil/sillydodo.git](https://github.com/Jeenil/sillydodo.git)
 cd sillydodo
 
 # 2. Initialize npm and install linting tools
@@ -180,4 +159,8 @@ Coming soon:
 - [x] Install complete-lint (ESLint, Prettier, cspell)
 - [x] Configure TypeScript with strict settings
 - [x] Document tech stack and architecture
-- [] Create comprehensive README
+- [x] Create comprehensive README
+
+## TO DO
+
+- [] Add more notes for the Vercel config and DNS Notes.
