@@ -31,26 +31,6 @@ npm install -D complete-lint
 # TODO
 ```
 
-## What I've Learned So Far
-
-### Vim Basics
-
-- `i` - Enter Insert mode
-- `Esc` - Return to Normal mode
-- `:wq` - Save and quit
-- `0` - Go to beginning of line
-- `$` - Go to end of line
-- `gg` - Go to top of file
-- `G` - Go to bottom of file
-
-### Bash Terminal Navigation (Mac)
-
-- `Ctrl + A` - Beginning of line
-- `Ctrl + E` - End of line
-- `Ctrl + U` - Delete from cursor to beginning
-- `Ctrl + K` - Delete from cursor to end
-- `Ctrl + R` - Search command history
-
 ## Project Structure
 
 ```
