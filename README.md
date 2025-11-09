@@ -4,7 +4,7 @@ cat > README.md << 'EOF'
 
 > Personal portfolio and passion project built with modern web technologies.
 
-## 🎯 Project Goals
+## Project Goals
 
 - Build a modern portfolio website to showcase projects and experience
 - Learn Next.js, TypeScript, and DevOps best practices
