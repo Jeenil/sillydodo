@@ -1,0 +1,42 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "sillydodo",
+    "Jeenil",
+    "jeepatel",
+    "Porkbun",
+    "LogixHealth",
+    "PowerShell",
+    "AutoHotkey",
+    "Karabiner",
+    "DevOps",
+    "repos",
+    "tsconfig",
+    "gitignore",
+    "localhost",
+    "codebase",
+    "webhook",
+    "webhooks",
+    "subdomain",
+    "subdomains",
+    "nameserver",
+    "nameservers",
+    "Vercel",
+    "NextJS",
+    "TypeScript",
+    "JavaScript"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    ".next/**",
+    "out/**",
+    "*.log",
+    "package-lock.json",
+    "yarn.lock",
+    "pnpm-lock.yaml"
+  ],
+  "ignoreWords": []
+}
