@@ -130,8 +130,6 @@ npm install next@latest react@latest react-dom@latest
 npm run dev
 ```
 
----
-
 ## Project Structure
 
 ```
@@ -142,13 +140,50 @@ sillydodo/
 ├── package.json        # Project dependencies
 ├── package-lock.json   # Locked dependency versions
 └── README.md           # This file
-
-Coming soon:
 ├── app/
 │   ├── layout.tsx      # Root layout (wraps all pages)
 │   ├── page.tsx        # Homepage (/)
 │   └── globals.css     # Global styles
 ```
+
+### Deploy to Vercel (Free Hosting)
+
+**Step 1 - Create Vercel account:**
+
+- Go to https://vercel.com/signup
+- Sign up with GitHub (easiest option)
+
+Done account used: jeenil.patel16@gmail.com
+
+**Step 2 - Import your project:**
+
+- Click "Add New" → "Project"
+- Find "sillydodo" repo
+- Click "Import"
+- Vercel auto-detects Next.js settings
+- Click "Deploy"
+- Wait ~2 minutes
+
+**Step 3 - The URL that :**
+
+- like: `sillydodo.vercel.app`
+
+---
+
+### **Phase 3: Connect Custom Domain (sillydodo.net)**
+
+**In Vercel:**
+
+1. Go to your project → Settings → Domains
+2. Add domain: `sillydodo.net`
+3. Vercel will show you DNS records to add
+
+**In Porkbun:**
+
+1. Login to https://porkbun.com/account/domains
+2. Click on `sillydodo.net`
+3. Go to DNS settings
+4. **Add Vercel's records** (they'll tell you exactly what)
 
 ## Completed
 
@@ -160,7 +195,3 @@ Coming soon:
 - [x] Configure TypeScript with strict settings
 - [x] Document tech stack and architecture
 - [x] Create comprehensive README
-
-## TO DO
-
-- [] Add more notes for the Vercel config and DNS Notes.
