@@ -15,7 +15,9 @@
   "devDependencies": {
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "complete-lint": "^4.2.7"
+    "autoprefixer": "^10.4.22",
+    "complete-lint": "^4.2.7",
+    "postcss": "^8.5.6"
   },
   "dependencies": {
     "next": "^16.0.1",
