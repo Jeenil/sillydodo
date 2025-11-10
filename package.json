@@ -1,7 +1,7 @@
 {
   "name": "sillydodo",
   "version": "1.0.0",
-  "description": "cat > README.md << 'EOF'",
+  "description": "Packages Needed for the project!",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
