@@ -134,16 +134,16 @@ npm run dev
 
 ```
 sillydodo/
-├── .gitignore          # Git ignore rules
-├── cspell.json         # Spell checker config
-├── tsconfig.json       # TypeScript config (extends complete-tsconfig)
-├── package.json        # Project dependencies
-├── package-lock.json   # Locked dependency versions
-└── README.md           # This file
-├── app/
-│   ├── layout.tsx      # Root layout (wraps all pages)
-│   ├── page.tsx        # Homepage (/)
-│   └── globals.css     # Global styles
+├── .gitignore # Git ignore rules
+├── cspell.json # Spell checker config
+├── tsconfig.json # TypeScript config (extends complete-tsconfig)
+├── package.json # Project dependencies
+├── package-lock.json # Locked dependency versions
+├── README.md # This file
+└── app/
+├── layout.tsx # Root layout (wraps all pages)
+├── providers.tsx # Chakra UI provider (Client Component)
+├── page.tsx # Homepage (/)
 ```
 
 ### Deploy to Vercel (Free Hosting)
@@ -185,6 +185,35 @@ Done account used: jeenil.patel16@gmail.com
 3. Go to DNS settings
 4. **Add Vercel's records** (they'll tell you exactly what)
 
+### **Chakra UI** - Component Library
+
+- **What**: React component library with accessible, pre-built UI components
+- **Why**: Faster development with ready-made components, consistent design system, built-in dark mode support!
+- **Link**: https://chakra-ui.com/
+- **Version**: v2.x (stable)
+
+## Key Learnings & Notes
+
+### Session 1: Setting Up UI Framework
+
+- Installed Chakra UI but initially got v3 (also beta)
+- Downgraded to v2.x stable: `npm install @chakra-ui/react@^2.8.2`
+- **Lesson**: For learning projects, stick with stable versions (LTS/stable releases)
+
+**Setting up Chakra UI in Next.js App Router:**
+
+1. **Client Components Required**: Chakra uses React Context, so the provider must be a Client Component
+   - Created `app/providers.tsx` with `'use client'` directive
+   - Wrapped app with `<ChakraProvider>` in the provider component
+
+1. **Layout Structure**:
+   ```
+   layout.tsx (Server Component)
+     └─> Providers (Client Component)
+           └─> ChakraProvider
+                 └─> Page content
+   ```
+
 ## Completed
 
 - [x] Purchase domain (sillydodo.net)
@@ -195,3 +224,12 @@ Done account used: jeenil.patel16@gmail.com
 - [x] Configure TypeScript with strict settings
 - [x] Document tech stack and architecture
 - [x] Create comprehensive README
+- [x] Install and configure Chakra UI v2
+- [x] Create About section with Chakra components
+- [x] Document learnings about stable vs beta versions
+
+## To-do
+
+- [] add routing for about page
+- [] like configs repo ?
+-
