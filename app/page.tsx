@@ -37,10 +37,7 @@ export default function Home() {
             About Me
           </Heading>
           <VStack spacing={4} align="stretch">
-            <Text fontSize="lg">
-              Hi! I'm Jeenil, a DevOps engineer and Senior Support Specialist at
-              LogixHealth Inc.
-            </Text>
+            <Text fontSize="lg">Hi! I'm Jeenil, and I like learning!</Text>
             <Text fontSize="lg">
               I work with Infrastructure as Code using PowerShell, Terraform,
               and Ansible, managing cloud infrastructure and Kubernetes
@@ -53,16 +50,6 @@ export default function Home() {
             </Text>
           </VStack>
         </Box>
-
-        {/* Optional: Add buttons or links */}
-        <HStack spacing={4} justify="center" pt={6}>
-          <Button colorScheme="blue" size="lg">
-            View Projects
-          </Button>
-          <Button variant="outline" size="lg">
-            Contact Me
-          </Button>
-        </HStack>
       </VStack>
     </Container>
   );
