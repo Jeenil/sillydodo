@@ -10,6 +10,7 @@ import {
   Code,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { ColorModeToggle } from "./components/ColorModeToggle";
 
 /**
  * Home page component
@@ -20,8 +21,9 @@ export default function Home() {
   const codeBg = useColorModeValue("gray.100", "gray.700");
 
   return (
-    // Main container with padding and centered content
-    <Container maxW="container.lg" py={20}>
+    // Main container. Use 'relative' so the toggle button is positioned correctly
+    <Container maxW="container.lg" py={20} position="relative">
+      <ColorModeToggle /> {/* <--- Use the component */}
       {/* VStack: Vertical stack of components with spacing */}
       <VStack spacing={8} align="stretch">
         {/* Hero Section */}
