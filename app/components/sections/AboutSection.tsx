@@ -29,12 +29,12 @@ export function AboutSection() {
         </Heading>
         <VStack spacing={4} align="stretch">
           <Text fontSize="lg">
-            I work with Infrastructure as Code using managing On-Prem Systems
-            and also Hybrid cloud infrastructure.
+            I currently work with Infrastructure as Code managing On-Prem
+            Systems and also Hybrid cloud infrastructure.
           </Text>
           <Text fontSize="lg">
             This site is my learning playground where I document my journey with
-            modern web technologies sprinkled through out my different projects
+            modern web technologies sprinkled through out my different projects.
             I enjoy learning and applying DevOps best practices in personal life
             as well!
           </Text>
