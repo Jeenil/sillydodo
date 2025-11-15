@@ -2,234 +2,152 @@
 
 > Personal portfolio and passion project built with modern web technologies.
 
-## Project Goals
+## Current Version: v2.0 (Split-View Single-Page App)
 
-- Build a modern portfolio website to showcase projects and experience
-- Learn Next.js, TypeScript, and DevOps best practices
-- Document learnings about DNS, networking, and web infrastructure
-- Create foundation for future features (blog, merch store)
-
-## Tech Stack Explained
-
-### **Next.js** - Web Framework
-
-- **What**: React framework for production-ready websites
-- **Why**: Automatic routing, server-side rendering, optimized performance, built-in TypeScript support
-- **Link**: https://nextjs.org/
-- **Version**: App Router (modern standard)
-
-### **React** - UI Library
-
-- **What**: JavaScript library for building user interfaces
-- **Why**: Component-based architecture, massive ecosystem, industry standard
-- **Link**: https://react.dev/
-
-### **React DOM** - Browser Bridge
-
-- **What**: Connects React components to the browser's Document Object Model (DOM)
-- **Why**: Renders React code as actual HTML in the browser
-- **Link**: https://react.dev/reference/react-dom
-
-### **Node.js** - Runtime Environment
-
-- **What**: Executes JavaScript on the server (not just browsers)
-- **Why**: Required for Next.js to run, powers the development server
-- **Link**: https://nodejs.org/
-
-### **TypeScript** - Programming Language
-
-- **What**: JavaScript with type safety
-- **Why**: Catches errors before runtime, better IDE support, self-documenting code
-- **Link**: https://www.typescriptlang.org/
-
-### **Vercel** - Hosting Platform
-
-- **What**: Cloud platform optimized for Next.js (built by same company)
-- **Why**: Free tier, automatic deployments, global CDN, serverless functions
-- **Link**: https://vercel.com/
-
-### **Porkbun** - Domain Registrar
-
-- **What**: Domain name registration and DNS management
-- **Why**: Affordable pricing, good DNS management interface
-- **Link**: https://porkbun.com/
-
-### **complete-lint** - Code Quality Tools
-
-- **What**: Meta-package with ESLint, Prettier, and cspell
-- **Why**: Enforces code style, catches errors, checks spelling automatically
-- **Link**: https://complete-ts.github.io/
+**Live Site:** sillydodo.net  
+**Repository:** https://github.com/Jeenil/sillydodo
 
 ---
 
-## How It All Works Together
+## Project Evolution
 
-```mermaid
-graph TD
-    A("[ YOU ]") -- "Writes code using..." --> B("Next.js (Framework)<br/>[React (UI Library)]")
-    B -- "...is compiled and run by..." --> C("Node.js (Runtime)")
-    C -- "...is deployed to..." --> D("Vercel (Cloud Host)")
-    D -- "...converts React code to HTML/DOM using..." --> E("React DOM (Bridge)")
-    E -- "...which is what the user's browser sees as the..." --> F("Browser DOM (Webpage)")
-```
+### v1.0 (Initial Setup)
 
-### What is the DOM?
+- ✅ Basic Next.js site with Chakra UI
+- ✅ Single page with About section
+- ✅ Dark mode support
+- ✅ Deployed to Vercel
 
-The **DOM (Document Object Model)** is how browsers represent webpages as a tree of objects:
+### v2.0 (Current - November 2025)
 
-```html
-<div>
-  <h1>Hello</h1>
-  <p>World</p>
-</div>
-```
-
-Becomes this tree structure in memory:
-
-```mermaid
-graph TD
-    A("div") --> B("h1 (&quot;Hello&quot;)")
-    A --> C("p (&quot;World&quot;)")
-```
-
-**Why it matters:**
-
-- JavaScript can manipulate the DOM dynamically
-- React/Next.js automate DOM updates for you
-- **React DOM** is the library that converts React code into actual DOM elements
+- ✅ Single-page application (no page refreshes)
+- ✅ Split-view layout (sidebar + main content)
+- ✅ Responsive design (desktop sidebar, mobile drawer)
+- ✅ 4 sections: About, Projects, Infrastructure, Contact
+- ✅ Smooth section transitions with animations
+- ✅ Navigation state management with React Context
 
 ---
 
-## Setup
+## Tech Stack
 
-### Prerequisites
+- **Next.js 16** - React framework with App Router
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Chakra UI v2** - Component library
+- **Vercel** - Hosting platform
 
-```bash
-# Check Node.js (need 18.17+)
-node --version
+---
 
-# Check npm
-npm --version
+## Key Learnings
+
+### Server vs Client Components
+
+- Server components = default, can't use hooks
+- Client components = need `'use client'`, can use state/effects
+- Use client when you need: useState, onClick, useContext, browser APIs
+
+### React Context Pattern
+
+- Solves props drilling problem
+- Provides global state (navigation)
+- Zero external dependencies
+
+### Responsive Design
+
+```tsx
+<Box width={{ base: '100%', md: '280px' }}>
 ```
 
-### Installation
+- `base`: Mobile (0px+)
+- `md`: Tablet (768px+)
+- `lg`: Desktop (1024px+)
+
+### Component Composition
+
+- Build from small, reusable pieces
+- SidebarContent used in desktop AND mobile
+- ContactLink reused for each social link
+
+## Quick Start
 
 ```bash
-# 1. Clone repository
-git clone [https://github.com/Jeenil/sillydodo.git](https://github.com/Jeenil/sillydodo.git)
-cd sillydodo
+# Install dependencies
+npm install
 
-# 2. Initialize npm and install linting tools
-npm init -y
-npm install -D complete-lint
-
-# 3. Install Next.js, React, and React DOM
-npm install next@latest react@latest react-dom@latest
-
-# 4. Start development server (coming soon!)
+# Run development server
 npm run dev
 ```
+
+Open http://localhost:3000
+
+---
 
 ## Project Structure
 
 ```
-sillydodo/
-├── .gitignore # Git ignore rules
-├── cspell.json # Spell checker config
-├── tsconfig.json # TypeScript config (extends complete-tsconfig)
-├── package.json # Project dependencies
-├── package-lock.json # Locked dependency versions
-├── README.md # This file
-└── app/
-├── layout.tsx # Root layout (wraps all pages)
-├── providers.tsx # Chakra UI provider (Client Component)
-├── page.tsx # Homepage (/)
+app/
+├── components/
+│   ├── Sidebar.tsx              # Navigation
+│   ├── Header.tsx               # Top bar
+│   ├── Providers.tsx            # Context providers
+│   └── sections/                # Page sections
+│       ├── AboutSection.tsx
+│       ├── ProjectsSection.tsx
+│       ├── InfrastructureSection.tsx
+│       └── ContactSection.tsx
+├── hooks/
+│   └── useNavigation.tsx        # Navigation state
+├── theme/
+│   ├── config.tsx               # Theme config
+│   └── index.tsx                # Theme implementation
+├── layout.tsx
+└── page.tsx
 ```
-
-### Deploy to Vercel (Free Hosting)
-
-**Step 1 - Create Vercel account:**
-
-- Go to https://vercel.com/signup
-- Sign up with GitHub (easiest option)
-
-Done account used: jeenil.patel16@gmail.com
-
-**Step 2 - Import your project:**
-
-- Click "Add New" → "Project"
-- Find "sillydodo" repo
-- Click "Import"
-- Vercel auto-detects Next.js settings
-- Click "Deploy"
-- Wait ~2 minutes
-
-**Step 3 - The URL that :**
-
-- like: `sillydodo.vercel.app`
 
 ---
 
-### **Phase 3: Connect Custom Domain (sillydodo.net)**
+## Roadmap
 
-**In Vercel:**
+### ✅ Done
 
-1. Go to your project → Settings → Domains
-2. Add domain: `sillydodo.net`
-3. Vercel will show you DNS records to add
+- Split-view layout with sidebar
+- Mobile responsive drawer
+- 4 sections with content
+- Dark mode toggle
+- React Context navigation
 
-**In Porkbun:**
+### In Progress
 
-1. Login to https://porkbun.com/account/domains
-2. Click on `sillydodo.net`
-3. Go to DNS settings
-4. **Add Vercel's records** (they'll tell you exactly what)
+- GitHub API integration for local-configs
+- Markdown rendering
+- Syntax highlighting
 
-### **Chakra UI** - Component Library
+### Next Up
 
-- **What**: React component library with accessible, pre-built UI components
-- **Why**: Faster development with ready-made components, consistent design system, built-in dark mode support!
-- **Link**: https://chakra-ui.com/
-- **Version**: v2.x (stable)
+- GitHub Actions for doc generation
+- K8s/ArgoCD/Airflow setup
+- Infrastructure documentation
+- Blog section
 
-## Key Learnings & Notes
+---
 
-### Session 1: Setting Up UI Framework
+## Deploy
 
-- Installed Chakra UI but initially got v3 (also beta)
-- Downgraded to v2.x stable: `npm install @chakra-ui/react@^2.8.2`
-- **Lesson**: For learning projects, stick with stable versions (LTS/stable releases)
+```bash
+gc
+```
 
-**Setting up Chakra UI in Next.js App Router:**
+Vercel auto-deploys!
 
-1. **Client Components Required**: Chakra uses React Context, so the provider must be a Client Component
-   - Created `app/providers.tsx` with `'use client'` directive
-   - Wrapped app with `<ChakraProvider>` in the provider component
+---
 
-1. **Layout Structure**:
-   ```
-   layout.tsx (Server Component)
-     └─> Providers (Client Component)
-           └─> ChakraProvider
-                 └─> Page content
-   ```
+## Contact
 
-## Completed
+- **GitHub**: [@Jeenil](https://github.com/Jeenil)
+- **LinkedIn**: [Jeenil Patel](https://www.linkedin.com/in/jeenil-patel)
+- **Email**: jeenil.patel16@gmail.com
 
-- [x] Purchase domain (sillydodo.net)
-- [x] Initialize Git repository
-- [x] Set up GitHub repo
-- [x] Configure .gitignore
-- [x] Install complete-lint (ESLint, Prettier, cspell)
-- [x] Configure TypeScript with strict settings
-- [x] Document tech stack and architecture
-- [x] Create comprehensive README
-- [x] Install and configure Chakra UI v2
-- [x] Create About section with Chakra components
-- [x] Document learnings about stable vs beta versions
+---
 
-## To-do
-
-- [] add routing for about page
-- [] like configs repo ?
--
+**Version**: 2.0
