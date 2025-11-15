@@ -1,12 +1,12 @@
-"use client"; // <--- Add this back
+"use client";
 
 import { extendTheme } from "@chakra-ui/react";
-import { config } from "./theme-config";
+import { config } from "./config";
 
 // Simple color customization
 const colors = {
   brand: {
-    500: "#2196F3", // Blue
+    500: "#f3db21ff", // Blue
   },
 };
 
