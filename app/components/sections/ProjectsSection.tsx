@@ -140,6 +140,69 @@ export function ProjectsSection() {
               on a container to check for changes to state via service hook.
             </Text>
           </Box>
+
+          <Flex gap={2} flexWrap="wrap">
+            <Badge colorScheme="blue">PowerShell</Badge>
+            <Badge colorScheme="purple">GitHub Actions</Badge>
+            <Badge colorScheme="cyan">Declarative State</Badge>
+            <Badge colorScheme="pink">Discogs API</Badge>
+          </Flex>
+        </Box>
+
+        {/* casio-lk-keyboard-learning-guide Project */}
+        <Box
+          bg={cardBg}
+          p={6}
+          borderRadius="lg"
+          border="1px"
+          borderColor={borderColor}
+          _hover={{
+            bg: hoverBg,
+            transform: "translateY(-4px)",
+            shadow: "lg",
+          }}
+          transition="all 0.2s"
+        >
+          <Flex justify="space-between" align="start" mb={4}>
+            <Heading as="h3" size="md" fontFamily="mono">
+              casio-lk-keyboard-learning-guide
+            </Heading>
+            <Link
+              href="https://github.com/Jeenil/casio-lk-keyboard-learning-guide"
+              isExternal
+              color="brand.500"
+            >
+              <ExternalLinkIcon boxSize={6} />
+            </Link>
+          </Flex>
+
+          <Text mb={4} color="gray.600" _dark={{ color: "gray.400" }}>
+            I been trying to learn more music as its its such a big part of my
+            life and try to grown wings and fly!
+          </Text>
+          <Box
+            p={3}
+            bg="yellow.50"
+            _dark={{ bg: "yellow.900" }}
+            borderRadius="md"
+            borderLeft="4px"
+            borderColor="yellow.400"
+          >
+            <Text
+              fontSize="sm"
+              color="yellow.800"
+              _dark={{ color: "yellow.200" }}
+            >
+              <strong>Documentation coming soon!</strong>
+              As I listen to more of my records will start adding them in and
+              more features. TODO: Add CICD Pipeline for only update state file
+              and pushing up the change so it cna run in github actions or task
+              on a container to check for changes to state via service hook.
+              Till then please check out the current documents can be checked
+              out at the Github link.
+            </Text>
+          </Box>
+
           <Flex gap={2} flexWrap="wrap">
             <Badge colorScheme="blue">PowerShell</Badge>
             <Badge colorScheme="purple">GitHub Actions</Badge>
