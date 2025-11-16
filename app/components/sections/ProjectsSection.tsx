@@ -88,21 +88,64 @@ export function ProjectsSection() {
           </Box>
         </Box>
 
-        {/* Placeholder for future projects */}
+        {/* discogs-state-mgmt Project */}
         <Box
           bg={cardBg}
           p={6}
           borderRadius="lg"
           border="1px"
           borderColor={borderColor}
-          opacity={0.6}
+          _hover={{
+            bg: hoverBg,
+            transform: "translateY(-4px)",
+            shadow: "lg",
+          }}
+          transition="all 0.2s"
         >
-          <Heading as="h3" size="md" mb={4} fontFamily="mono">
-            More Projects
-          </Heading>
-          <Text color="gray.600" _dark={{ color: "gray.400" }}>
-            Additional projects will be added here as I build them. Stay tuned!
+          <Flex justify="space-between" align="start" mb={4}>
+            <Heading as="h3" size="md" fontFamily="mono">
+              discogs-state-mgmt
+            </Heading>
+            <Link
+              href="https://github.com/Jeenil/discogs-state-mgmt"
+              isExternal
+              color="brand.500"
+            >
+              <ExternalLinkIcon boxSize={6} />
+            </Link>
+          </Flex>
+
+          <Text mb={4} color="gray.600" _dark={{ color: "gray.400" }}>
+            Declarative, Git-based workflow for managing a Discogs record
+            collection. Update a JSON file. Will be adding in more features and
+            CICD runs. Also my Love for music section soon!
           </Text>
+          <Box
+            p={3}
+            bg="yellow.50"
+            _dark={{ bg: "yellow.900" }}
+            borderRadius="md"
+            borderLeft="4px"
+            borderColor="yellow.400"
+          >
+            <Text
+              fontSize="sm"
+              color="yellow.800"
+              _dark={{ color: "yellow.200" }}
+            >
+              <strong>Documentation coming soon!</strong>
+              As I listen to more of my records will start adding them in and
+              more features. TODO: Add CICD Pipeline for only update state file
+              and pushing up the change so it cna run in github actions or task
+              on a container to check for changes to state via service hook.
+            </Text>
+          </Box>
+          <Flex gap={2} flexWrap="wrap">
+            <Badge colorScheme="blue">PowerShell</Badge>
+            <Badge colorScheme="purple">GitHub Actions</Badge>
+            <Badge colorScheme="cyan">Declarative State</Badge>
+            <Badge colorScheme="pink">Discogs API</Badge>
+          </Flex>
         </Box>
       </SimpleGrid>
     </VStack>
