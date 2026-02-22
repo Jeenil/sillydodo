@@ -7,8 +7,7 @@ import {
   Heading,
   useColorMode,
 } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 
 interface HeaderProps {
   onMenuOpen: () => void;

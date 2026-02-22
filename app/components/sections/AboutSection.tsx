@@ -19,7 +19,7 @@ export function AboutSection() {
           Hi! I'm Jeenil 👋
         </Heading>
         <Text fontSize="xl" color="gray.500">
-          Current working as an Associate Systems Engineer
+          Currently working as an Associate Systems Engineer
         </Text>
       </Box>
 
@@ -34,7 +34,7 @@ export function AboutSection() {
           </Text>
           <Text fontSize="lg">
             This site is my learning playground where I document my journey with
-            modern web technologies sprinkled through out my different projects.
+            modern web technologies sprinkled throughout my different projects.
             I enjoy learning and applying DevOps best practices in personal life
             as well!
           </Text>
@@ -47,8 +47,7 @@ export function AboutSection() {
         </Heading>
         <VStack spacing={3} align="stretch">
           <Text>
-            <strong>Having a proper plan is important. </strong> - More Reading!
-            workflows
+            <strong>GitHub Actions</strong> - CI/CD workflows
           </Text>
           <Text>
             <strong>Kubernetes & ArgoCD</strong> - GitOps workflows
