@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type SectionId = "about" | "projects" | "infrastructure" | "contact";
+type SectionId = "about" | "projects" | "infrastructure" | "contact" | "quiz";
 
 interface NavigationContextType {
   currentSection: SectionId;
