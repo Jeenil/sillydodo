@@ -126,7 +126,7 @@ function randomFrom<T>(arr: T[]): T {
 }
 
 function extractYear(dateStr: string): string {
-  return dateStr ? dateStr.split("-")[0] : "Unknown";
+  return dateStr ? (dateStr.split("-")[0] ?? "Unknown") : "Unknown";
 }
 
 // Strip Archive.org title suffix: "Rattlesnake (Live in Paris '23)" → "Rattlesnake"
