@@ -16,7 +16,7 @@ const NavigationContext = createContext<NavigationContextType | undefined>(
 );
 
 export function NavigationProvider({ children }: { children: ReactNode }) {
-  const [currentSection, setCurrentSection] = useState<SectionId>("about");
+  const [currentSection, setCurrentSection] = useState<SectionId>("quiz");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
