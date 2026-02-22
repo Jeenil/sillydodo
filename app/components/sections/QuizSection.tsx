@@ -644,7 +644,7 @@ export function QuizSection() {
           )}
 
           {/* Question text (trivia only) */}
-          {quizMode === "trivia" && (
+          {quizMode === "trivia" && currentTrivia && (
             <Box bg={cardBg} p={8} borderRadius="lg" border="1px" borderColor={cardBorder}>
               <Text fontSize="lg" fontWeight="medium" mb={6}>
                 {currentTrivia.question}
@@ -690,7 +690,7 @@ export function QuizSection() {
           )}
 
           {/* Answer choices (Name That Tune) */}
-          {quizMode === "namethetune" && (
+          {quizMode === "namethetune" && currentAudio && (
             <Box bg={cardBg} p={6} borderRadius="lg" border="1px" borderColor={cardBorder}>
               <VStack spacing={3} align="stretch">
                 {currentAudio.choices.map((choice) => {
