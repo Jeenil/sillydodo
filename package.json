@@ -16,6 +16,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "autoprefixer": "^10.4.22",
+    "baseline-browser-mapping": "2.10.0",
     "complete-lint": "^4.2.7",
     "postcss": "^8.5.6"
   },

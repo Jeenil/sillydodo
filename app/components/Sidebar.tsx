@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { useNavigation } from '../hooks/useNavigation';
 
-type SectionId = 'about' | 'projects' | 'infrastructure' | 'contact';
+type SectionId = 'about' | 'projects' | 'infrastructure' | 'contact' | 'quiz';
 
 interface NavItem {
   id: SectionId;
@@ -29,6 +29,7 @@ const navItems: NavItem[] = [
   { id: 'projects', label: 'Projects', emoji: '📁' },
   { id: 'infrastructure', label: 'Infrastructure', emoji: '⚙️' },
   { id: 'contact', label: 'Contact', emoji: '📧' },
+  { id: 'quiz', label: 'Gizz Quiz', emoji: '🎸' },
 ];
 
 function SidebarContent() {

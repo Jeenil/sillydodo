@@ -8,6 +8,7 @@ import { AboutSection } from "./components/sections/AboutSection";
 import { ProjectsSection } from "./components/sections/ProjectsSection";
 import { InfrastructureSection } from "./components/sections/InfrastructureSection";
 import { ContactSection } from "./components/sections/ContactSection";
+import { QuizSection } from "./components/sections/QuizSection";
 
 export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,6 +25,8 @@ export default function Home() {
         return <InfrastructureSection />;
       case "contact":
         return <ContactSection />;
+      case "quiz":
+        return <QuizSection />;
       default:
         return <AboutSection />;
     }
