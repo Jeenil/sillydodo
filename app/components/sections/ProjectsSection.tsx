@@ -134,10 +134,10 @@ export function ProjectsSection() {
               _dark={{ color: "yellow.200" }}
             >
               <strong>Documentation coming soon!</strong>
-              As I listen to more of my records will start adding them in and
-              more features. TODO: Add CICD Pipeline for only update state file
-              and pushing up the change so it cna run in github actions or task
-              on a container to check for changes to state via service hook.
+              As I listen to more records I&apos;ll keep adding them in with more
+              features. TODO: Add CI/CD pipeline to update the state file and
+              push the change so it can run in GitHub Actions or a task on a
+              container to check for state changes via service hook.
             </Text>
           </Box>
 
@@ -177,8 +177,8 @@ export function ProjectsSection() {
           </Flex>
 
           <Text mb={4} color="gray.600" _dark={{ color: "gray.400" }}>
-            I been trying to learn more music as its its such a big part of my
-            life and try to grown wings and fly!
+            I&apos;ve been trying to learn more music as it&apos;s such a big
+            part of my life — trying to grow wings and fly!
           </Text>
           <Box
             p={3}
@@ -193,21 +193,15 @@ export function ProjectsSection() {
               color="yellow.800"
               _dark={{ color: "yellow.200" }}
             >
-              <strong>Documentation coming soon!</strong>
-              As I listen to more of my records will start adding them in and
-              more features. TODO: Add CICD Pipeline for only update state file
-              and pushing up the change so it cna run in github actions or task
-              on a container to check for changes to state via service hook.
-              Till then please check out the current documents can be checked
-              out at the Github link.
+              <strong>Documentation coming soon!</strong> Check out the current
+              learning materials at the GitHub link above.
             </Text>
           </Box>
 
           <Flex gap={2} flexWrap="wrap">
-            <Badge colorScheme="blue">PowerShell</Badge>
-            <Badge colorScheme="purple">GitHub Actions</Badge>
-            <Badge colorScheme="cyan">Declarative State</Badge>
-            <Badge colorScheme="pink">Discogs API</Badge>
+            <Badge colorScheme="green">Markdown</Badge>
+            <Badge colorScheme="pink">Music</Badge>
+            <Badge colorScheme="orange">Documentation</Badge>
           </Flex>
         </Box>
       </SimpleGrid>

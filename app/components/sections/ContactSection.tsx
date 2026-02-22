@@ -76,19 +76,19 @@ export function ContactSection() {
 
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
         <ContactLink
-          emoji=""
+          emoji="🐙"
           label="GitHub"
           value="@Jeenil"
           href="https://github.com/Jeenil"
         />
         <ContactLink
-          emoji=""
+          emoji="💼"
           label="LinkedIn"
           value="Jeenil Patel"
           href="https://www.linkedin.com/in/jeenil-patel"
         />
         <ContactLink
-          emoji=""
+          emoji="📧"
           label="Email"
           value="jeenilrpatel@gmail.com"
           href="mailto:jeenilrpatel@gmail.com"

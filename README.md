@@ -4,7 +4,7 @@
 
 ## Current Version: v2.0 (Split-View Single-Page App)
 
-**Live Site:** sillydodo.net  
+**Live Site:** sillydodo.net
 **Repository:** https://github.com/Jeenil/sillydodo
 
 ---
@@ -13,19 +13,19 @@
 
 ### v1.0 (Initial Setup)
 
-- ✅ Basic Next.js site with Chakra UI
-- ✅ Single page with About section
-- ✅ Dark mode support
-- ✅ Deployed to Vercel
+- Basic Next.js site with Chakra UI
+- Single page with About section
+- Dark mode support
+- Deployed to Vercel
 
 ### v2.0 (Current - November 2025)
 
-- ✅ Single-page application (no page refreshes)
-- ✅ Split-view layout (sidebar + main content)
-- ✅ Responsive design (desktop sidebar, mobile drawer)
-- ✅ 4 sections: About, Projects, Infrastructure, Contact
-- ✅ Smooth section transitions with animations
-- ✅ Navigation state management with React Context
+- Single-page application (no page refreshes)
+- Split-view layout (sidebar + main content)
+- Responsive design (desktop sidebar, mobile drawer)
+- 4 sections: About, Projects, Infrastructure, Contact
+- Smooth section transitions with animations
+- Navigation state management with React Context
 
 ---
 
@@ -69,6 +69,8 @@
 - SidebarContent used in desktop AND mobile
 - ContactLink reused for each social link
 
+---
+
 ## Quick Start
 
 ```bash
@@ -109,7 +111,7 @@ app/
 
 ## Roadmap
 
-### ✅ Done
+### Done
 
 - Split-view layout with sidebar
 - Mobile responsive drawer
@@ -134,11 +136,7 @@ app/
 
 ## Deploy
 
-```bash
-gc
-```
-
-Vercel auto-deploys!
+Vercel auto-deploys on push to `main`.
 
 ---
 
@@ -146,7 +144,7 @@ Vercel auto-deploys!
 
 - **GitHub**: [@Jeenil](https://github.com/Jeenil)
 - **LinkedIn**: [Jeenil Patel](https://www.linkedin.com/in/jeenil-patel)
-- **Email**: jeenil.patel16@gmail.com
+- **Email**: jeenilrpatel@gmail.com
 
 ---
 
