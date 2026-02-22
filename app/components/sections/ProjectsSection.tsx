@@ -2,6 +2,7 @@
 
 import {
   Box,
+  Button,
   Heading,
   Text,
   VStack,
@@ -69,23 +70,17 @@ export function ProjectsSection() {
             <Badge colorScheme="orange">Automation</Badge>
           </Flex>
 
-          <Box
-            p={3}
-            bg="yellow.50"
-            _dark={{ bg: "yellow.900" }}
-            borderRadius="md"
-            borderLeft="4px"
-            borderColor="yellow.400"
+          <Button
+            as={Link}
+            href="https://github.com/Jeenil/local-configs#readme"
+            isExternal
+            size="sm"
+            variant="outline"
+            rightIcon={<ExternalLinkIcon />}
+            _hover={{ textDecoration: "none" }}
           >
-            <Text
-              fontSize="sm"
-              color="yellow.800"
-              _dark={{ color: "yellow.200" }}
-            >
-              <strong>Documentation coming soon!</strong> Auto-generated docs
-              from PowerShell and Bash configs will be displayed here.
-            </Text>
-          </Box>
+            View Docs on GitHub
+          </Button>
         </Box>
 
         {/* discogs-state-mgmt Project */}
@@ -120,26 +115,18 @@ export function ProjectsSection() {
             collection. Update a JSON file. Will be adding in more features and
             CICD runs. Also my Love for music section soon!
           </Text>
-          <Box
-            p={3}
-            bg="yellow.50"
-            _dark={{ bg: "yellow.900" }}
-            borderRadius="md"
-            borderLeft="4px"
-            borderColor="yellow.400"
+          <Button
+            as={Link}
+            href="https://github.com/Jeenil/discogs-state-mgmt#readme"
+            isExternal
+            size="sm"
+            variant="outline"
+            rightIcon={<ExternalLinkIcon />}
+            _hover={{ textDecoration: "none" }}
+            mb={4}
           >
-            <Text
-              fontSize="sm"
-              color="yellow.800"
-              _dark={{ color: "yellow.200" }}
-            >
-              <strong>Documentation coming soon!</strong>
-              As I listen to more records I&apos;ll keep adding them in with more
-              features. TODO: Add CI/CD pipeline to update the state file and
-              push the change so it can run in GitHub Actions or a task on a
-              container to check for state changes via service hook.
-            </Text>
-          </Box>
+            View Docs on GitHub
+          </Button>
 
           <Flex gap={2} flexWrap="wrap">
             <Badge colorScheme="blue">PowerShell</Badge>
@@ -180,23 +167,17 @@ export function ProjectsSection() {
             I&apos;ve been trying to learn more music as it&apos;s such a big
             part of my life — trying to grow wings and fly!
           </Text>
-          <Box
-            p={3}
-            bg="yellow.50"
-            _dark={{ bg: "yellow.900" }}
-            borderRadius="md"
-            borderLeft="4px"
-            borderColor="yellow.400"
+          <Button
+            as={Link}
+            href="https://github.com/Jeenil/casio-lk-keyboard-learning-guide#readme"
+            isExternal
+            size="sm"
+            variant="outline"
+            rightIcon={<ExternalLinkIcon />}
+            _hover={{ textDecoration: "none" }}
           >
-            <Text
-              fontSize="sm"
-              color="yellow.800"
-              _dark={{ color: "yellow.200" }}
-            >
-              <strong>Documentation coming soon!</strong> Check out the current
-              learning materials at the GitHub link above.
-            </Text>
-          </Box>
+            View Docs on GitHub
+          </Button>
 
           <Flex gap={2} flexWrap="wrap">
             <Badge colorScheme="green">Markdown</Badge>
