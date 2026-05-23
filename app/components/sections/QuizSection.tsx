@@ -249,7 +249,7 @@ async function fetchAudioQuestions(): Promise<{ questions: AudioQuestion[]; post
     } catch { continue; }
   }
 
-  throw new Error("Couldn't load audio tracks. Try again — a different show will be picked.");
+  throw new Error("Couldn't load audio tracks. Try again -a different show will be picked.");
 }
 
 async function tryBuildAudioQuestions(
@@ -380,7 +380,7 @@ export function QuizSection() {
             });
           }, 1000);
         })
-        .catch(() => { /* autoplay blocked — replay button stays visible */ });
+        .catch(() => { /* autoplay blocked -replay button stays visible */ });
     }, 150);
 
     return () => {
@@ -428,7 +428,7 @@ export function QuizSection() {
     try {
       if (quizMode === "trivia") {
         const [tracks, uMap] = await Promise.all([getAlbums(), getUploadsMap()]);
-        if (tracks.length < 20) throw new Error("Couldn't load album data — try again.");
+        if (tracks.length < 20) throw new Error("Couldn't load album data -try again.");
 
         const posterUrls = [...uMap.values()];
         setPosterUrl(posterUrls.length > 0 ? randomFrom(posterUrls) : null);
@@ -442,7 +442,7 @@ export function QuizSection() {
           if (q && !seen.has(q.question)) { seen.add(q.question); qs.push(q); }
           attempts++;
         }
-        if (qs.length < 5) throw new Error("Couldn't generate enough questions — try again.");
+        if (qs.length < 5) throw new Error("Couldn't generate enough questions -try again.");
         setQuestions(qs);
         setAudioQuestions([]);
 
@@ -495,7 +495,7 @@ export function QuizSection() {
   return (
     <VStack align="stretch" spacing={8} maxW="800px">
 
-      {/* Hidden audio element — always in DOM */}
+      {/* Hidden audio element -always in DOM */}
       <audio ref={audioRef} preload="none" style={{ display: "none" }} />
 
       {/* Header */}
@@ -518,12 +518,12 @@ export function QuizSection() {
                 {
                   id: "trivia" as QuizMode,
                   label: "Music Trivia",
-                  desc: "Albums, release years, originals vs covers — studio discography.",
+                  desc: "Albums, release years, originals vs covers -studio discography.",
                 },
                 {
                   id: "namethetune" as QuizMode,
                   label: "Name That Tune",
-                  desc: "A clip from a real KGLW live recording plays — guess the song.",
+                  desc: "A clip from a real KGLW live recording plays -guess the song.",
                 },
               ].map((mode) => {
                 const isActive = quizMode === mode.id;
@@ -631,7 +631,7 @@ export function QuizSection() {
                   {isPlaying
                     ? `${CLIP_DURATION - clipSeconds}s remaining…`
                     : hasPlayed
-                    ? "Clip finished — pick your answer"
+                    ? "Clip finished -pick your answer"
                     : "Loading clip…"}
                 </Text>
                 {!isPlaying && selected === null && (
@@ -758,7 +758,7 @@ export function QuizSection() {
                 {score === totalQs
                   ? "Perfect score! You're a true Gizz head."
                   : score >= totalQs * 0.7
-                  ? "Solid effort — you know your stuff."
+                  ? "Solid effort -you know your stuff."
                   : score >= totalQs * 0.4
                   ? "Not bad. The rabbit hole goes deeper."
                   : "Time to revisit the discography."}

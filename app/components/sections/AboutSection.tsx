@@ -5,12 +5,9 @@ import {
   Heading,
   Text,
   VStack,
-  Code,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
 export function AboutSection() {
-  const codeBg = useColorModeValue("gray.100", "gray.700");
 
   return (
     <VStack align="stretch" spacing={8} maxW="800px">
@@ -47,6 +44,12 @@ export function AboutSection() {
         </Heading>
         <VStack spacing={3} align="stretch">
           <Text>
+            <strong>SCIM Provisioning</strong> - Building centralised identity provisioning from Entra ID to SaaS apps
+          </Text>
+          <Text>
+            <strong>Entra ID Directory Extensions</strong> - Custom tenant schema management via Terraform + azapi, JSON-driven attribute definitions
+          </Text>
+          <Text>
             <strong>GitHub Actions</strong> - CI/CD workflows
           </Text>
           <Text>
@@ -54,12 +57,6 @@ export function AboutSection() {
           </Text>
           <Text>
             <strong>Apache Airflow</strong> - Workflow automation
-          </Text>
-          <Text>
-            <strong>Setting up this custom playground</strong> - Market analysis
-          </Text>
-          <Text>
-            <strong>Next.js App Router</strong> - Modern React framework
           </Text>
         </VStack>
       </Box>
