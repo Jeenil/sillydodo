@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import {
   Flex,
   IconButton,
@@ -17,6 +18,15 @@ export function Header({ onMenuOpen }: HeaderProps) {
   const { colorMode, toggleColorMode } = useColorMode();
   const bg = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  // Before mounting, always render the dark-mode icon (SunIcon) so the
+  // server and client produce identical HTML during hydration.
+  const colorModeIcon = mounted
+    ? (colorMode === 'light' ? <MoonIcon /> : <SunIcon />)
+    : <SunIcon />;
 
   return (
     <Flex
@@ -59,7 +69,7 @@ export function Header({ onMenuOpen }: HeaderProps) {
       {/* Color mode toggle */}
       <IconButton
         aria-label="Toggle color mode"
-        icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+        icon={colorModeIcon}
         onClick={toggleColorMode}
         variant="ghost"
       />

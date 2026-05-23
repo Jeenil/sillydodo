@@ -76,11 +76,6 @@ function SidebarContent() {
               <Text fontWeight={isActive ? 'semibold' : 'normal'}>
                 {item.label}
               </Text>
-              {item.id === 'infrastructure' && (
-                <Text ml="auto" fontSize="xs" color="gray.500">
-                  soon
-                </Text>
-              )}
             </Flex>
           );
         })}
