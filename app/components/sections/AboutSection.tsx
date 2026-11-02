@@ -26,8 +26,9 @@ const learning = [
   "Azure storage",
   "Kubernetes",
   "Azure networking",
-  "SFTP architecture, on-prem to cloud (since 2022)",
+  "SFTP architecture, on-prem to cloud",
   "Entra ID directory extensions",
+  "Logging and alerting",
 ];
 
 export function AboutSection() {
@@ -90,7 +91,7 @@ export function AboutSection() {
 
       <Box>
         <Heading as="h2" size="md" mb={4}>
-          Currently learning
+          Getting better at
         </Heading>
         <Flex gap={2} flexWrap="wrap">
           {learning.map((l) => (
