@@ -6,12 +6,33 @@ import {
   Button,
   Flex,
   Heading,
+  Link,
   SimpleGrid,
   Text,
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { lessonsLearned } from "../../data/projects";
+
+const STU_INTERVIEW =
+  "https://www.undertheradarmag.com/interviews/king_gizzard_the_lizard_wizards_stu_mackenzie_on_butterfly_3000_and_their_i/";
+
+// Exact quotes from Stu Mackenzie's 2021 Under the Radar interview
+function StuQuote({ children }: { children: string }) {
+  return (
+    <Box as="figure" mt={4} pl={4} borderLeft="3px solid" borderColor="lizard.500">
+      <Text as="blockquote" fontStyle="italic">
+        &ldquo;{children}&rdquo;
+      </Text>
+      <Text as="figcaption" fontSize="sm" color="gray.500" mt={1}>
+        Stu Mackenzie,{" "}
+        <Link href={STU_INTERVIEW} isExternal textDecoration="underline">
+          Under the Radar (2021)
+        </Link>
+      </Text>
+    </Box>
+  );
+}
 import { useNavigation } from "../../hooks/useNavigation";
 
 // Headline numbers, matching the resume
@@ -44,14 +65,17 @@ export function AboutSection() {
         </Heading>
         <Text fontSize="xl" mb={2}>
           Associate Systems Engineer working on Entra ID identity governance and Azure
-          infrastructure, built secure by default and kept simple.
+          infrastructure, built secure by default and try to keep it simple.
         </Text>
         <Text fontSize="lg" color="gray.500">
-          I took the Polygondwanaland route: started in psychology, ran experiments in a research
+          i took the Polygondwanaland route: started in psychology, ran experiments in a research
           lab, wandered into economics, and walked out with a minor in both. Then I crash-landed in
-          IT support in 2021 and automated my way into engineering, because doing the same thing
-          twice is a crime. Robot Stop? Never. 🦎
+          IT support in 2021 and since then continued to learn and enjoy my way into engineering, 
+          because doing the same thing twice is a crime. Robot Stop? Never. 🦎
         </Text>
+        <StuQuote>
+          I&apos;ve tried to subscribe to the idea that if I don&apos;t like something, I don&apos;t understand it.
+        </StuQuote>
         <Flex gap={3} mt={6} flexWrap="wrap">
           <Button colorScheme="brand" color="gray.900" onClick={() => setCurrentSection("work")}>
             See my work
@@ -82,6 +106,11 @@ export function AboutSection() {
         <Text fontSize="sm" color="gray.500" mb={4}>
           Picked up from my team and mentors, one code review at a time.
         </Text>
+        <Box mb={4}>
+          <StuQuote>
+            It&apos;s not about how good anyone is. It&apos;s about how well you play together.
+          </StuQuote>
+        </Box>
         <VStack align="stretch" spacing={2}>
           {lessonsLearned.map((l) => (
             <Text key={l} pl={4} borderLeft="3px solid" borderColor="brand.500">
