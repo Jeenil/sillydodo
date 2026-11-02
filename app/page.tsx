@@ -5,8 +5,8 @@ import { DesktopSidebar, MobileSidebar } from "./components/Sidebar";
 import { Header } from "./components/Header";
 import { useNavigation } from "./hooks/useNavigation";
 import { AboutSection } from "./components/sections/AboutSection";
-import { ProjectsSection } from "./components/sections/ProjectsSection";
-import { InfrastructureSection } from "./components/sections/InfrastructureSection";
+import { WorkSection } from "./components/sections/WorkSection";
+import { OpenSourceSection } from "./components/sections/OpenSourceSection";
 import { ContactSection } from "./components/sections/ContactSection";
 import { QuizSection } from "./components/sections/QuizSection";
 
@@ -19,10 +19,10 @@ export default function Home() {
     switch (currentSection) {
       case "about":
         return <AboutSection />;
-      case "projects":
-        return <ProjectsSection />;
-      case "infrastructure":
-        return <InfrastructureSection />;
+      case "work":
+        return <WorkSection />;
+      case "opensource":
+        return <OpenSourceSection />;
       case "contact":
         return <ContactSection />;
       case "quiz":

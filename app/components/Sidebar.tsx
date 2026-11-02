@@ -14,9 +14,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/react';
-import { useNavigation } from '../hooks/useNavigation';
-
-type SectionId = 'about' | 'projects' | 'infrastructure' | 'contact' | 'quiz';
+import { useNavigation, type SectionId } from '../hooks/useNavigation';
 
 interface NavItem {
   id: SectionId;
@@ -26,8 +24,8 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { id: 'about', label: 'About', emoji: '👤' },
-  { id: 'projects', label: 'Projects', emoji: '📁' },
-  { id: 'infrastructure', label: 'Infrastructure', emoji: '⚙️' },
+  { id: 'work', label: 'Work', emoji: '💼' },
+  { id: 'opensource', label: 'Open Source', emoji: '📦' },
   { id: 'contact', label: 'Contact', emoji: '📧' },
   { id: 'quiz', label: 'Gizz Quiz', emoji: '🎸' },
 ];

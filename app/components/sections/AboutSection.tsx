@@ -1,64 +1,84 @@
 "use client";
 
 import {
+  Badge,
   Box,
+  Button,
+  Flex,
   Heading,
+  SimpleGrid,
   Text,
   VStack,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import { Principles } from "../Principles";
+import { useNavigation } from "../../hooks/useNavigation";
+
+// Headline numbers, matching the resume
+const stats = [
+  { value: "3,650", label: "external users moved to Entra ID" },
+  { value: "16 TB", label: "file shares migrated to Azure" },
+  { value: "$200K", label: "saved per year by automation" },
+  { value: "22", label: "releases of my Terraform module" },
+];
+
+const learning = ["SCIM provisioning", "Entra ID directory extensions", "SFTPGo on AKS", "Logging and alerting"];
 
 export function AboutSection() {
+  const { setCurrentSection } = useNavigation();
+  const cardBg = useColorModeValue("white", "gray.800");
+  const borderColor = useColorModeValue("gray.200", "gray.700");
 
   return (
-    <VStack align="stretch" spacing={8} maxW="800px">
-      <Box textAlign="center" py={10}>
+    <VStack align="stretch" spacing={10} maxW="900px">
+      <Box pt={6}>
         <Heading as="h1" size="2xl" mb={4}>
-          Hi! I'm Jeenil 👋
+          Hi! I&apos;m Jeenil 👋
         </Heading>
-        <Text fontSize="xl" color="gray.500">
-          Currently working as an Associate Systems Engineer
+        <Text fontSize="xl" mb={2}>
+          Associate Systems Engineer working on Entra ID identity governance and Azure
+          infrastructure, built secure by default and kept simple.
         </Text>
+        <Text fontSize="lg" color="gray.500">
+          I started in IT support in 2021 and grew into engineering by automating the work I
+          used to do by hand.
+        </Text>
+        <Flex gap={3} mt={6} flexWrap="wrap">
+          <Button colorScheme="brand" color="gray.900" onClick={() => setCurrentSection("work")}>
+            See my work
+          </Button>
+          <Button variant="outline" onClick={() => setCurrentSection("opensource")}>
+            Open source
+          </Button>
+        </Flex>
       </Box>
 
-      <Box>
-        <Heading as="h2" size="lg" mb={4}>
-          About Me
-        </Heading>
-        <VStack spacing={4} align="stretch">
-          <Text fontSize="lg">
-            I currently work with Infrastructure as Code managing On-Prem
-            Systems and also Hybrid cloud infrastructure.
-          </Text>
-          <Text fontSize="lg">
-            This site is my learning playground where I document my journey with
-            modern web technologies sprinkled throughout my different projects.
-            I enjoy learning and applying DevOps best practices in personal life
-            as well!
-          </Text>
-        </VStack>
-      </Box>
+      <SimpleGrid columns={{ base: 2, md: 4 }} spacing={4}>
+        {stats.map((s) => (
+          <Box key={s.label} bg={cardBg} border="1px" borderColor={borderColor} borderRadius="lg" p={4}>
+            <Text fontSize="2xl" fontWeight="bold" lineHeight="1.2">
+              {s.value}
+            </Text>
+            <Text fontSize="sm" color="gray.500">
+              {s.label}
+            </Text>
+          </Box>
+        ))}
+      </SimpleGrid>
+
+      <Principles />
 
       <Box>
-        <Heading as="h2" size="lg" mb={4}>
-          Currently Learning
+        <Heading as="h2" size="md" mb={4}>
+          Currently learning
         </Heading>
-        <VStack spacing={3} align="stretch">
-          <Text>
-            <strong>SCIM Provisioning</strong> - Building centralised identity provisioning from Entra ID to SaaS apps
-          </Text>
-          <Text>
-            <strong>Entra ID Directory Extensions</strong> - Custom tenant schema management via Terraform + azapi, JSON-driven attribute definitions
-          </Text>
-          <Text>
-            <strong>GitHub Actions</strong> - CI/CD workflows
-          </Text>
-          <Text>
-            <strong>Kubernetes & ArgoCD</strong> - GitOps workflows
-          </Text>
-          <Text>
-            <strong>Apache Airflow</strong> - Workflow automation
-          </Text>
-        </VStack>
+        <Flex gap={2} flexWrap="wrap">
+          {learning.map((l) => (
+            <Badge key={l} variant="subtle" colorScheme="lizard" px={3} py={1} borderRadius="full" textTransform="none" fontSize="sm">
+              {l}
+            </Badge>
+          ))}
+        </Flex>
       </Box>
     </VStack>
   );
