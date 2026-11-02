@@ -11,7 +11,6 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Principles } from "../Principles";
 import { useNavigation } from "../../hooks/useNavigation";
 
 // Headline numbers, matching the resume
@@ -65,8 +64,6 @@ export function AboutSection() {
           </Box>
         ))}
       </SimpleGrid>
-
-      <Principles />
 
       <Box>
         <Heading as="h2" size="md" mb={4}>
