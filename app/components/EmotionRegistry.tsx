@@ -13,11 +13,12 @@ export function EmotionRegistry({ children }: { children: React.ReactNode }) {
     const cache = createCache({ key: "css" });
     cache.compat = true;
     const prevInsert = cache.insert;
-    let inserted: string[] = [];
+    let inserted: { name: string; isGlobal: boolean }[] = [];
     cache.insert = (...args) => {
-      const serialized = args[1];
+      const [selector, serialized] = args;
       if (cache.inserted[serialized.name] === undefined) {
-        inserted.push(serialized.name);
+        // Global styles (body colors etc.) are inserted without a selector
+        inserted.push({ name: serialized.name, isGlobal: !selector });
       }
       return prevInsert(...args);
     };
@@ -30,18 +31,36 @@ export function EmotionRegistry({ children }: { children: React.ReactNode }) {
   });
 
   useServerInsertedHTML(() => {
-    const names = flush();
-    if (names.length === 0) return null;
+    const items = flush();
+    if (items.length === 0) return null;
     let styles = "";
-    for (const name of names) {
-      styles += cache.inserted[name];
+    let dataEmotion = cache.key;
+    const globals: { name: string; style: string }[] = [];
+    for (const { name, isGlobal } of items) {
+      const style = cache.inserted[name];
+      if (typeof style !== "string") continue;
+      if (isGlobal) {
+        globals.push({ name, style });
+      } else {
+        styles += style;
+        dataEmotion += ` ${name}`;
+      }
     }
+    // Globals get their own tags with emotion's "<key>-global <name>" marker, so
+    // <Global> can find and replace them on the client (e.g. on color mode change)
     return (
-      <style
-        key={cache.key}
-        data-emotion={`${cache.key} ${names.join(" ")}`}
-        dangerouslySetInnerHTML={{ __html: styles }}
-      />
+      <>
+        {globals.map(({ name, style }) => (
+          <style
+            key={name}
+            data-emotion={`${cache.key}-global ${name}`}
+            dangerouslySetInnerHTML={{ __html: style }}
+          />
+        ))}
+        {styles && (
+          <style data-emotion={dataEmotion} dangerouslySetInnerHTML={{ __html: styles }} />
+        )}
+      </>
     );
   });
 
