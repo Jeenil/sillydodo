@@ -22,7 +22,15 @@ const stats = [
   { value: "22", label: "releases of my Terraform module" },
 ];
 
-const learning = ["SCIM provisioning", "Entra ID directory extensions", "SFTPGo on AKS", "Logging and alerting"];
+const learning = [
+  "Azure storage",
+  "Kubernetes",
+  "Azure networking",
+  "SFTP architecture (since 2022)",
+  "SFTPGo on AKS",
+  "Entra ID directory extensions",
+  "Logging and alerting",
+];
 
 export function AboutSection() {
   const { setCurrentSection } = useNavigation();
