@@ -47,9 +47,10 @@ export function AboutSection() {
           infrastructure, built secure by default and kept simple.
         </Text>
         <Text fontSize="lg" color="gray.500">
-          I took the scenic route: started in psychology, did a stint in a research lab, wandered
-          into economics, and kept a minor in both. Then I landed in IT support in 2021 and
-          automated my way into engineering, because doing the same thing twice is a crime. 🦎
+          I took the Polygondwanaland route: started in psychology, ran experiments in a research
+          lab, wandered into economics, and walked out with a minor in both. Then I crash-landed in
+          IT support in 2021 and automated my way into engineering, because doing the same thing
+          twice is a crime. Robot Stop? Never. 🦎
         </Text>
         <Flex gap={3} mt={6} flexWrap="wrap">
           <Button colorScheme="brand" color="gray.900" onClick={() => setCurrentSection("work")}>
