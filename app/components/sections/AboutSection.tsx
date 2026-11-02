@@ -26,10 +26,8 @@ const learning = [
   "Azure storage",
   "Kubernetes",
   "Azure networking",
-  "SFTP architecture (since 2022)",
-  "SFTPGo on AKS",
+  "SFTP architecture, on-prem to cloud (since 2022)",
   "Entra ID directory extensions",
-  "Logging and alerting",
 ];
 
 export function AboutSection() {
