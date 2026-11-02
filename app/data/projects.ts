@@ -73,12 +73,23 @@ flowchart LR
       "The first pass missed users who hadn't signed in for 8+ months. Next time I'll scope inactive accounts in from the start and check the counts before cutover.",
   },
   {
+    name: "Defender Policy Promotion",
+    role: "engineer",
+    tech: ["defender"],
+    summary: "Security policy changes move through dev, staging and prod, so they're tested on a small group before they reach every device.",
+    details: [
+      "Each change lands in dev first, then staging, then prod.",
+      "Problems show up on a few test devices instead of the whole fleet.",
+    ],
+  },
+  {
     name: "File Shares to Azure Files",
     role: "engineer",
     tech: ["azure", "kubernetes", "activeDirectory"],
-    metric: { value: "16 TB", label: "migrated, zero data loss" },
+    metric: { value: "36 TB", label: "migrated, zero data loss" },
     summary: "Moved on-prem file shares to Azure Files with least-privilege access.",
     details: [
+      "About 16 TB of active file shares plus 20 TB of archive data.",
       "Private endpoints and Kerberos sign-in instead of storage keys.",
       "Permissions rebuilt around read-only and read-write groups.",
       "Cutover and rollback tooling written first: the first attempt rolled back cleanly and the second succeeded.",

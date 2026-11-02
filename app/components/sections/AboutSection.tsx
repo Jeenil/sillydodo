@@ -17,7 +17,7 @@ import { useNavigation } from "../../hooks/useNavigation";
 // Headline numbers, matching the resume
 const stats = [
   { value: "3,650", label: "external users moved to Entra ID" },
-  { value: "16 TB", label: "file shares migrated to Azure" },
+  { value: "36 TB", label: "file shares and archive moved to Azure" },
   { value: "$200K", label: "saved per year by automation" },
   { value: "22", label: "releases of my Terraform module" },
 ];

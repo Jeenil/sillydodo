@@ -43,6 +43,11 @@ export const tech = {
     color: "#00A4EF",
     docsUrl: "https://learn.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview",
   },
+  defender: {
+    label: "Microsoft Defender",
+    color: "#0078D4",
+    docsUrl: "https://learn.microsoft.com/defender-endpoint/",
+  },
   graph: {
     label: "Microsoft Graph",
     color: "#2B88D8",
