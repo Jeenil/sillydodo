@@ -167,13 +167,15 @@ flowchart LR
   },
 ];
 
-// General takeaways that apply to every project. Not shown yet; will become
-// part of a project plan outline later.
-export const lessonsForNextProjects = [
-  "Write a short design doc before starting a large project, so the approach gets reviewed early.",
-  "Plan the rollback before the change, and treat a rollback as information, not failure.",
-  "Set up logging and alerts at the start of a project, not after something breaks.",
-  "Test changes from where the real workload runs, not just from my own machine.",
+// What I've picked up so far, said casually with a King Gizzard nod.
+// Shown on the About page.
+export const lessonsLearned = [
+  "Plan the way back before going forward. Every cutover should be able to loop home, Nonagon Infinity style.",
+  "Keep it simple. A riff the whole band can play beats a microtonal masterpiece nobody else can tune to.",
+  "Test from where the real thing runs, not just from my laptop. Learned that one the hard way.",
+  "Write a short design doc first, so everyone agrees on the setlist before the show.",
+  "Logs and alerts go in at the start, not after the rats' nest is already on fire.",
+  "Not everything needs to be code. Some things live in the portal, as long as they're written down.",
 ];
 
 export interface Repo {

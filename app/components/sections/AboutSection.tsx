@@ -11,6 +11,7 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { lessonsLearned } from "../../data/projects";
 import { useNavigation } from "../../hooks/useNavigation";
 
 // Headline numbers, matching the resume
@@ -64,6 +65,22 @@ export function AboutSection() {
           </Box>
         ))}
       </SimpleGrid>
+
+      <Box>
+        <Heading as="h2" size="md" mb={1}>
+          Lessons from the swamp 🦎
+        </Heading>
+        <Text fontSize="sm" color="gray.500" mb={4}>
+          Picked up from my team and mentors, one code review at a time.
+        </Text>
+        <VStack align="stretch" spacing={2}>
+          {lessonsLearned.map((l) => (
+            <Text key={l} pl={4} borderLeft="3px solid" borderColor="brand.500">
+              {l}
+            </Text>
+          ))}
+        </VStack>
+      </Box>
 
       <Box>
         <Heading as="h2" size="md" mb={4}>
