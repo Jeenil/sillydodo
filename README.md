@@ -11,14 +11,14 @@
 
 ## Project Evolution
 
-### v1.0 — Initial Setup
+### v1.0: Initial Setup
 
 - Basic Next.js site with Chakra UI
 - Single page with About section
 - Dark mode support
 - Deployed to Vercel
 
-### v2.0 — Split-View SPA (November 2025)
+### v2.0: Split-View SPA (November 2025)
 
 - Single-page application (no page refreshes)
 - Split-view layout (sidebar + main content)
@@ -27,27 +27,27 @@
 - Smooth section transitions with animations
 - Navigation state management with React Context
 
-### v3.0 — Gizz Quiz (February 2026)
+### v3.0: Gizz Quiz (February 2026)
 
-- Added **Gizz Quiz** section — a King Gizzard & the Lizard Wizard knowledge quiz
+- Added **Gizz Quiz** section, a King Gizzard & the Lizard Wizard knowledge quiz
 - Live data from [kglw.net API](https://kglw.net/api/docs.php) (no auth required)
 - Two quiz modes:
-  - **Music Trivia** — album, release year, and original/cover questions from the studio discography
-  - **Name That Tune** — 30-second clips from real KGLW live recordings (Archive.org), auto-plays on each question
+  - **Music Trivia**: album, release year, and original/cover questions from the studio discography
+  - **Name That Tune**: 30-second clips from real KGLW live recordings (Archive.org), auto-plays on each question
 - Show poster art pulled from kglw.net uploads API, displayed alongside each quiz
 - Sound effects on correct/wrong answers via Web Audio API (no audio files needed)
-- All API data cached at module level — replaying is instant
+- All API data cached at module level, so replaying is instant
 
 ---
 
 ## Tech Stack
 
-- **Next.js 16** — React framework with App Router
-- **React 19** — UI library
-- **TypeScript** — Type safety
-- **Chakra UI v2** — Component library
-- **Vercel** — Hosting platform
-- **Bun** — Package manager and dev runner
+- **Next.js 16**: React framework with App Router
+- **React 19**: UI library
+- **TypeScript**: Type safety
+- **Chakra UI v2**: Component library
+- **Vercel**: Hosting platform
+- **Bun**: Package manager and dev runner
 
 ---
 

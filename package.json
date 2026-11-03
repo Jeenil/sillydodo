@@ -1,7 +1,7 @@
 {
   "name": "sillydodo",
   "version": "1.0.0",
-  "description": "Personal portfolio site — sillydodo.net",
+  "description": "Personal portfolio site: sillydodo.net",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
