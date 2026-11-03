@@ -3,22 +3,13 @@
 import { extendTheme, type StyleFunctionProps } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import { config } from "./config";
+import { accents, DEFAULT_ACCENT } from "./accents";
 
 // King Gizzard & the Lizard Wizard palette: acid yellow into Nonagon orange,
 // with swampy greens and deep psychedelic purples
 const colors = {
-  brand: {
-    50: "#fffbe0",
-    100: "#fff3b0",
-    200: "#ffe97a",
-    300: "#ffde45",
-    400: "#f9d423",
-    500: "#f3b61f", // acid gold, the main accent
-    600: "#e8891c", // Nonagon orange
-    700: "#c45a16",
-    800: "#8f3a12",
-    900: "#5c220c",
-  },
+  // Default accent; visitors can switch it with the header color picker
+  brand: accents.find((a) => a.id === DEFAULT_ACCENT)?.shades,
   lizard: {
     50: "#e9fbe5",
     100: "#c6f2bc",

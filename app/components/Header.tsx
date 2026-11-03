@@ -9,6 +9,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
+import { AccentPicker } from './AccentPicker';
 
 interface HeaderProps {
   onMenuOpen: () => void;
@@ -65,6 +66,9 @@ export function Header({ onMenuOpen }: HeaderProps) {
 
       {/* Spacer for desktop */}
       <Flex flex={1} display={{ base: 'none', md: 'flex' }} />
+
+      {/* Accent color picker */}
+      <AccentPicker />
 
       {/* Color mode toggle */}
       <IconButton
