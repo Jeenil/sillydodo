@@ -101,10 +101,10 @@ export function AboutSection() {
 
       <Box>
         <Heading as="h2" size="md" mb={1}>
-          Lessons from the swamp 🦎
+          Lessons learned
         </Heading>
         <Text fontSize="sm" color="gray.500" mb={4}>
-          Picked up from my team and mentors, one code review at a time.
+          Picked up from my team and mentors, and everyone.
         </Text>
         <Box mb={4}>
           <StuQuote>

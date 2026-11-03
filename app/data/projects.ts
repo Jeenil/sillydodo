@@ -178,15 +178,14 @@ flowchart LR
   },
 ];
 
-// What I've picked up so far, said casually with a King Gizzard nod.
-// Shown on the About page.
+// What I've picked up so far. Shown on the About page.
 export const lessonsLearned = [
-  "Plan the way back before going forward. Every cutover should be able to loop home, Nonagon Infinity style.",
-  "Keep it simple. A riff the whole band can play beats a microtonal masterpiece nobody else can tune to.",
-  "Test from where the real thing runs, not just from my laptop. Learned that one the hard way.",
-  "Write a short design doc first, so everyone agrees on the setlist before the show.",
-  "Logs and alerts go in at the start, not after the rats' nest is already on fire.",
-  "Not everything needs to be code. Some things live in the portal, as long as they're written down.",
+  "Plan the way back before going forward.",
+  "Keep it simple, so the whole team can follow it.",
+  "Test from where the real thing runs, not just from my laptop.",
+  "Write a short design doc first, so everyone agrees on the approach.",
+  "Add logs and alerts at the start, not after something breaks.",
+  "Not everything needs to be code, as long as it's written down.",
 ];
 
 export interface Repo {
