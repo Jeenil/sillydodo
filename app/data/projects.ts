@@ -180,6 +180,8 @@ flowchart LR
 
 // What I've picked up so far. Shown on the About page.
 export const lessonsLearned = [
+  "Test, test, test.",
+  "Read the whole issue, question or prompt twice before starting.",
   "Plan the way back before going forward.",
   "Keep it simple, so the whole team can follow it.",
   "Test from where the real thing runs, not just from my laptop.",
