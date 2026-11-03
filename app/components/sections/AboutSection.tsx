@@ -68,10 +68,9 @@ export function AboutSection() {
           infrastructure, built secure by default and try to keep it simple.
         </Text>
         <Text fontSize="lg" color="gray.500">
-          i took the Polygondwanaland route: started in psychology, ran experiments in a research
-          lab, wandered into economics, and walked out with a minor in both. Then I crash-landed in
-          IT support in 2021 and since then continued to learn and enjoy my way into engineering, 
-          because doing the same thing twice is a crime. Robot Stop? Never. 🦎
+          I took the long way here. I started in psychology, worked in a research lab, and studied
+          economics, with a minor in both. I joined IT support in 2021 and have kept learning my way
+          into engineering ever since.
         </Text>
         <StuQuote>
           I&apos;ve tried to subscribe to the idea that if I don&apos;t like something, I don&apos;t understand it.
