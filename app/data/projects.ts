@@ -296,6 +296,18 @@ export const repos: Repo[] = [
     tags: ["Declarative State"],
   },
   {
+    name: "helpful-cmdts",
+    repoUrl: "https://github.com/Jeenil/helpful-cmdts",
+    description:
+      "My day-to-day command cheat sheets for kubectl, gh, Key Vault, Graph and Teams, published as a searchable docs site.",
+    tech: ["markdown", "kubernetes", "githubActions"],
+    tags: ["Documentation"],
+    extraLink: {
+      label: "Docs site",
+      url: "https://jeenil.github.io/helpful-cmdts/",
+    },
+  },
+  {
     name: "casio-lk-keyboard-learning-guide",
     repoUrl: "https://github.com/Jeenil/casio-lk-keyboard-learning-guide",
     description: "My step-by-step notes for learning keyboard on a Casio LK.",
