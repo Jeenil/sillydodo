@@ -1,0 +1,4 @@
+{
+  // Prettier handles formatting, and the README has long lines.
+  "MD013": false,
+}

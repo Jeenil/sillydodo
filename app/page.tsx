@@ -1,34 +1,41 @@
 "use client";
 
 import { Box, Container, useDisclosure } from "@chakra-ui/react";
-import { DesktopSidebar, MobileSidebar } from "./components/Sidebar";
 import { Header } from "./components/Header";
-import { useNavigation } from "./hooks/useNavigation";
 import { AboutSection } from "./components/sections/AboutSection";
-import { WorkSection } from "./components/sections/WorkSection";
-import { OpenSourceSection } from "./components/sections/OpenSourceSection";
 import { ContactSection } from "./components/sections/ContactSection";
+import { OpenSourceSection } from "./components/sections/OpenSourceSection";
 import { QuizSection } from "./components/sections/QuizSection";
+import { WorkSection } from "./components/sections/WorkSection";
+import { DesktopSidebar, MobileSidebar } from "./components/Sidebar";
+import { useNavigation } from "./hooks/useNavigation";
 
-export default function Home() {
+export default function Home(): React.JSX.Element {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { currentSection } = useNavigation();
 
-  // Render the appropriate section
+  // Render the appropriate section.
   const renderSection = () => {
     switch (currentSection) {
-      case "about":
+      case "about": {
         return <AboutSection />;
-      case "work":
+      }
+
+      case "work": {
         return <WorkSection />;
-      case "opensource":
+      }
+
+      case "opensource": {
         return <OpenSourceSection />;
-      case "contact":
+      }
+
+      case "contact": {
         return <ContactSection />;
-      case "quiz":
+      }
+
+      case "quiz": {
         return <QuizSection />;
-      default:
-        return <AboutSection />;
+      }
     }
   };
 

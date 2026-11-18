@@ -1,9 +1,9 @@
 "use client";
 
-import { useColorMode, IconButton } from "@chakra-ui/react";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { IconButton, useColorMode } from "@chakra-ui/react";
 
-export function ColorModeToggle() {
+export function ColorModeToggle(): React.JSX.Element {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (

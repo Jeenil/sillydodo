@@ -1,14 +1,15 @@
 import { ColorModeScript } from "@chakra-ui/react";
-import { config } from "./theme/config";
-import { Providers } from "./components/Providers";
 import { headers } from "next/headers";
+import { Providers } from "./components/Providers";
+import { config } from "./theme/config";
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  const cookieHeader = (await headers()).get("cookie") ?? "";
+}): Promise<React.JSX.Element> {
+  const requestHeaders = await headers();
+  const cookieHeader = requestHeaders.get("cookie") ?? "";
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -17,7 +18,10 @@ export default async function RootLayout({
       */}
       <body suppressHydrationWarning>
         {/* Script MUST be the first thing in <body> */}
-        <ColorModeScript initialColorMode={config.initialColorMode} type="cookie" />
+        <ColorModeScript
+          initialColorMode={config.initialColorMode}
+          type="cookie"
+        />
 
         {/* Providers wrapper is next */}
         <Providers cookieHeader={cookieHeader}>{children}</Providers>

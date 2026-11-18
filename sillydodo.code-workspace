@@ -1,0 +1,69 @@
+{
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+
+  "extensions": {
+    "recommendations": [
+      "DavidAnson.vscode-markdownlint", // Markdown linter
+      "dbaeumer.vscode-eslint", // TypeScript linter
+      "editorconfig.editorconfig", // Applies ".editorconfig"
+      "esbenp.prettier-vscode", // General formatter
+      "streetsidesoftware.code-spell-checker", // Spell-checker based on CSpell
+    ],
+  },
+
+  "settings": {
+    "editor.rulers": [100],
+    "editor.tabSize": 2,
+
+    // Always use "lf" to be consistent with all platforms.
+    "files.eol": "\n",
+
+    // Never write a BOM.
+    "files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+
+    "search.exclude": {
+      "**/.next/": true,
+      "**/node_modules/": true,
+      "bun.lock": true,
+      "package-lock.json": true,
+    },
+
+    "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+
+    "[typescript]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+    },
+    "[typescriptreact]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+    },
+    "[markdown]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": "explicit",
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+    },
+  },
+}

@@ -1,28 +1,42 @@
 "use client";
 
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
+  Badge,
   Box,
   Button,
-  Heading,
-  Text,
-  VStack,
-  SimpleGrid,
-  Badge,
-  Link,
   Flex,
+  Heading,
   HStack,
-  useColorModeValue,
   Image,
+  Link,
+  SimpleGrid,
+  Text,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-import { repos, type Repo } from "../../data/projects";
-import { tech as techInfo, type Tech } from "../../data/tech";
+import type { Repo } from "../../data/projects";
+import { repos } from "../../data/projects";
+import type { Tech } from "../../data/tech";
+import { tech as techInfo } from "../../data/tech";
 import { TechBadge } from "../TechBadge";
 
-function ProjectCard({ name, repoUrl, description, tech, tags, registryUrl, registryLabel, registryColor = "blue", extraLink, upstream }: Repo) {
+function ProjectCard({
+  name,
+  repoUrl,
+  description,
+  tech,
+  tags,
+  registryUrl,
+  registryLabel,
+  registryColor = "blue",
+  extraLink,
+  upstream,
+}: Repo) {
   const first = tech[0];
-  const primary: Tech | undefined = first ? techInfo[first] : undefined;
+  const primary: Tech | undefined =
+    first === undefined ? undefined : techInfo[first];
   const cardBg = useColorModeValue("white", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.700");
   const hoverBg = useColorModeValue("gray.50", "gray.750");
@@ -41,7 +55,14 @@ function ProjectCard({ name, repoUrl, description, tech, tags, registryUrl, regi
     >
       <Flex justify="space-between" align="start" mb={4}>
         <HStack spacing={3} align="center" minW={0}>
-          {primary?.logo && <Image src={primary.logo} alt={primary.label} boxSize="28px" flexShrink={0} />}
+          {primary?.logo !== undefined && primary.logo !== "" && (
+            <Image
+              src={primary.logo}
+              alt={primary.label}
+              boxSize="28px"
+              flexShrink={0}
+            />
+          )}
           <Link
             href={repoUrl}
             isExternal
@@ -70,7 +91,11 @@ function ProjectCard({ name, repoUrl, description, tech, tags, registryUrl, regi
           <VStack align="stretch" spacing={1}>
             {upstream.map((u) => (
               <HStack key={u.url} spacing={2} align="start">
-                <Badge colorScheme={u.merged ? "lizard" : "brand"} flexShrink={0} mt={0.5}>
+                <Badge
+                  colorScheme={u.merged ? "lizard" : "brand"}
+                  flexShrink={0}
+                  mt={0.5}
+                >
                   {u.merged ? "Merged" : "In review"}
                 </Badge>
                 <Link href={u.url} isExternal fontSize="sm">
@@ -87,12 +112,14 @@ function ProjectCard({ name, repoUrl, description, tech, tags, registryUrl, regi
           <TechBadge key={t} id={t} />
         ))}
         {tags?.map((t) => (
-          <Badge key={t} alignSelf="center" variant="subtle">{t}</Badge>
+          <Badge key={t} alignSelf="center" variant="subtle">
+            {t}
+          </Badge>
         ))}
       </Flex>
 
       <HStack spacing={3} flexWrap="wrap">
-        {registryUrl && (
+        {registryUrl !== undefined && registryUrl !== "" && (
           <Button
             as={Link}
             href={registryUrl}
@@ -135,10 +162,9 @@ function ProjectCard({ name, repoUrl, description, tech, tags, registryUrl, regi
   );
 }
 
-
-export function OpenSourceSection() {
-  const published = repos.filter((r) => r.published);
-  const sideProjects = repos.filter((r) => !r.published);
+export function OpenSourceSection(): React.JSX.Element {
+  const published = repos.filter((r) => r.published === true);
+  const sideProjects = repos.filter((r) => r.published !== true);
 
   return (
     <VStack align="stretch" spacing={10} maxW="1200px">

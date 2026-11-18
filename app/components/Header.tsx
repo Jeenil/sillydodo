@@ -1,40 +1,41 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Flex,
-  IconButton,
-  useColorModeValue,
   Heading,
+  IconButton,
   useColorMode,
-} from '@chakra-ui/react';
-import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
-import { AccentPicker } from './AccentPicker';
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { AccentPicker } from "./AccentPicker";
 
 interface HeaderProps {
   onMenuOpen: () => void;
 }
 
-export function Header({ onMenuOpen }: HeaderProps) {
+export function Header({ onMenuOpen }: HeaderProps): React.JSX.Element {
   const { colorMode, toggleColorMode } = useColorMode();
-  const bg = useColorModeValue('white', 'gray.800');
-  const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const bg = useColorModeValue("white", "gray.800");
+  const borderColor = useColorModeValue("gray.200", "gray.700");
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-  // Before mounting, always render the dark-mode icon (SunIcon) so the
-  // server and client produce identical HTML during hydration.
-  const colorModeIcon = mounted
-    ? (colorMode === 'light' ? <MoonIcon /> : <SunIcon />)
-    : <SunIcon />;
+  // Before mounting, always render the dark-mode icon (SunIcon) so the server and client produce
+  // identical HTML during hydration.
+  const colorModeIcon =
+    mounted && colorMode === "light" ? <MoonIcon /> : <SunIcon />;
 
   return (
     <Flex
       as="header"
       position="fixed"
       top={0}
-      left={{ base: 0, md: '280px' }}
+      left={{ base: 0, md: "280px" }}
       right={0}
       h="60px"
       bg={bg}
@@ -49,7 +50,7 @@ export function Header({ onMenuOpen }: HeaderProps) {
         aria-label="Open menu"
         icon={<HamburgerIcon />}
         variant="ghost"
-        display={{ base: 'flex', md: 'none' }}
+        display={{ base: "flex", md: "none" }}
         onClick={onMenuOpen}
         mr={3}
       />
@@ -59,13 +60,13 @@ export function Header({ onMenuOpen }: HeaderProps) {
         size="sm"
         fontFamily="mono"
         flex={1}
-        display={{ base: 'block', md: 'none' }}
+        display={{ base: "block", md: "none" }}
       >
         sillydodo.net
       </Heading>
 
       {/* Spacer for desktop */}
-      <Flex flex={1} display={{ base: 'none', md: 'flex' }} />
+      <Flex flex={1} display={{ base: "none", md: "flex" }} />
 
       {/* Accent color picker */}
       <AccentPicker />

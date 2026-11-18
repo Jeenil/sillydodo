@@ -1,16 +1,16 @@
 "use client";
 
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Heading,
-  Text,
-  VStack,
-  SimpleGrid,
-  Link,
   Flex,
+  Heading,
+  Link,
+  SimpleGrid,
+  Text,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon, EmailIcon } from "@chakra-ui/icons";
 
 interface ContactLinkProps {
   emoji: string;
@@ -62,7 +62,7 @@ function ContactLink({ emoji, label, value, href }: ContactLinkProps) {
   );
 }
 
-export function ContactSection() {
+export function ContactSection(): React.JSX.Element {
   return (
     <VStack align="stretch" spacing={8} maxW="800px">
       <Box>

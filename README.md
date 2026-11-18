@@ -5,7 +5,7 @@
 ## Current Version: v3.0 (Gizz Quiz)
 
 **Live Site:** sillydodo.net
-**Repository:** https://github.com/Jeenil/sillydodo
+**Repository:** <https://github.com/Jeenil/sillydodo>
 
 ---
 
@@ -93,13 +93,13 @@ bun install
 bun dev --no-turbopack
 ```
 
-Open http://localhost:3000
+Open <http://localhost:3000>
 
 ---
 
 ## Project Structure
 
-```
+```text
 app/
 ├── components/
 │   ├── Sidebar.tsx              # Navigation
@@ -157,7 +157,7 @@ Vercel auto-deploys on push to `main`.
 
 - **GitHub**: [@Jeenil](https://github.com/Jeenil)
 - **LinkedIn**: [Jeenil Patel](https://www.linkedin.com/in/jeenil-patel)
-- **Email**: jeenilrpatel@gmail.com
+- **Email**: <jeenilrpatel@gmail.com>
 
 ---
 

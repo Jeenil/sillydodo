@@ -1,14 +1,15 @@
 "use client";
 
-import { extendTheme, type StyleFunctionProps } from "@chakra-ui/react";
+import type { StyleFunctionProps } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
-import { config } from "./config";
 import { accents, DEFAULT_ACCENT } from "./accents";
+import { config } from "./config";
 
-// King Gizzard & the Lizard Wizard palette: acid yellow into Nonagon orange,
-// with swampy greens and deep psychedelic purples
+// King Gizzard & the Lizard Wizard palette: acid yellow into Nonagon orange, with swampy greens and
+// deep psychedelic purples
 const colors = {
-  // Default accent; visitors can switch it with the header color picker
+  // Default accent; visitors can switch it with the header color picker.
   brand: accents.find((a) => a.id === DEFAULT_ACCENT)?.shades,
   lizard: {
     50: "#e9fbe5",
@@ -22,8 +23,8 @@ const colors = {
     800: "#143d0e",
     900: "#081705",
   },
-  // Dark shades pulled toward purple so dark mode feels like a Gizz poster.
-  // Light shades are left neutral so light mode stays easy to read.
+  // Dark shades pulled toward purple so dark mode feels like a Gizz poster. Light shades are left
+  // neutral so light mode stays easy to read.
   gray: {
     50: "#faf6ec",
     100: "#f1ebdc",
@@ -54,7 +55,7 @@ const styles = {
   }),
 };
 
-const theme = extendTheme({
+export const theme = extendTheme({
   config,
   colors,
   styles,
@@ -64,5 +65,3 @@ const theme = extendTheme({
     },
   },
 });
-
-export default theme;

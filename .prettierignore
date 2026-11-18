@@ -1,0 +1,4 @@
+.next
+bun.lock
+package-lock.json
+node_modules

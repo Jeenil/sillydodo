@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
 import {
   Box,
-  VStack,
-  Text,
-  Flex,
-  Heading,
-  Divider,
-  useColorModeValue,
   Drawer,
   DrawerBody,
-  DrawerOverlay,
-  DrawerContent,
   DrawerCloseButton,
-} from '@chakra-ui/react';
-import { useNavigation, type SectionId } from '../hooks/useNavigation';
+  DrawerContent,
+  DrawerOverlay,
+  Flex,
+  Heading,
+  Text,
+  useColorModeValue,
+  VStack,
+} from "@chakra-ui/react";
+import type { SectionId } from "../hooks/useNavigation";
+import { useNavigation } from "../hooks/useNavigation";
 
 interface NavItem {
   id: SectionId;
@@ -23,18 +23,18 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { id: 'about', label: 'About', emoji: '👤' },
-  { id: 'work', label: 'Work', emoji: '💼' },
-  { id: 'opensource', label: 'Open Source', emoji: '📦' },
-  { id: 'contact', label: 'Contact', emoji: '📧' },
-  { id: 'quiz', label: 'Gizz Quiz', emoji: '🎸' },
+  { id: "about", label: "About", emoji: "👤" },
+  { id: "work", label: "Work", emoji: "💼" },
+  { id: "opensource", label: "Open Source", emoji: "📦" },
+  { id: "contact", label: "Contact", emoji: "📧" },
+  { id: "quiz", label: "Gizz Quiz", emoji: "🎸" },
 ];
 
 function SidebarContent() {
   const { currentSection, setCurrentSection } = useNavigation();
-  const activeBg = useColorModeValue('brand.500', 'brand.500');
-  const hoverBg = useColorModeValue('gray.100', 'whiteAlpha.200');
-  const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const activeBg = useColorModeValue("brand.500", "brand.500");
+  const hoverBg = useColorModeValue("gray.100", "whiteAlpha.200");
+  const borderColor = useColorModeValue("gray.200", "gray.700");
 
   return (
     <VStack align="stretch" spacing={1} h="full">
@@ -60,18 +60,22 @@ function SidebarContent() {
               align="center"
               p={3}
               borderRadius="md"
-              bg={isActive ? activeBg : 'transparent'}
-              color={isActive ? 'gray.900' : 'inherit'}
+              bg={isActive ? activeBg : "transparent"}
+              color={isActive ? "gray.900" : "inherit"}
               _hover={{
                 bg: isActive ? activeBg : hoverBg,
-                transform: 'translateX(4px)',
+                transform: "translateX(4px)",
               }}
               transition="all 0.2s"
               cursor="pointer"
-              onClick={() => setCurrentSection(item.id)}
+              onClick={() => {
+                setCurrentSection(item.id);
+              }}
             >
-              <Text mr={3} fontSize="xl">{item.emoji}</Text>
-              <Text fontWeight={isActive ? 'semibold' : 'normal'}>
+              <Text mr={3} fontSize="xl">
+                {item.emoji}
+              </Text>
+              <Text fontWeight={isActive ? "semibold" : "normal"}>
                 {item.label}
               </Text>
             </Flex>
@@ -90,9 +94,9 @@ function SidebarContent() {
 }
 
 // Desktop Sidebar
-export function DesktopSidebar() {
-  const bg = useColorModeValue('white', 'gray.800');
-  const borderColor = useColorModeValue('gray.200', 'gray.700');
+export function DesktopSidebar(): React.JSX.Element {
+  const bg = useColorModeValue("white", "gray.800");
+  const borderColor = useColorModeValue("gray.200", "gray.700");
 
   return (
     <Box
@@ -106,7 +110,7 @@ export function DesktopSidebar() {
       borderRight="1px"
       borderColor={borderColor}
       overflowY="auto"
-      display={{ base: 'none', md: 'block' }}
+      display={{ base: "none", md: "block" }}
     >
       <SidebarContent />
     </Box>
@@ -119,7 +123,10 @@ interface MobileSidebarProps {
   onClose: () => void;
 }
 
-export function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
+export function MobileSidebar({
+  isOpen,
+  onClose,
+}: MobileSidebarProps): React.JSX.Element {
   return (
     <Drawer isOpen={isOpen} placement="left" onClose={onClose} size="xs">
       <DrawerOverlay />

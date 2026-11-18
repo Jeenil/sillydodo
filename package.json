@@ -2,28 +2,24 @@
   "name": "sillydodo",
   "version": "1.0.0",
   "description": "Personal portfolio site: sillydodo.net",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "autoprefixer": "^10.4.22",
-    "baseline-browser-mapping": "2.10.32",
-    "complete-lint": "^4.2.7",
-    "postcss": "^8.5.6"
+    "dev": "next dev",
+    "fix": "eslint --fix . && prettier --write .",
+    "format": "prettier --write .",
+    "lint": "tsc --noEmit && eslint . && prettier --check . && cspell .",
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/next-js": "^2.4.2",
     "@chakra-ui/react": "^2.10.9",
+    "@chakra-ui/theme-tools": "^2.2.9",
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "framer-motion": "^12.23.24",
@@ -31,5 +27,14 @@
     "next": "^16.0.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "autoprefixer": "^10.4.22",
+    "baseline-browser-mapping": "2.10.32",
+    "complete-lint": "^4.2.7",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "postcss": "^8.5.6"
   }
 }

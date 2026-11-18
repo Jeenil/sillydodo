@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import {
   Box,
   IconButton,
@@ -13,13 +12,20 @@ import {
   Text,
   Tooltip,
 } from "@chakra-ui/react";
-import { accents, applyAccent, DEFAULT_ACCENT, loadAccent, saveAccent } from "../theme/accents";
+import { useEffect, useState } from "react";
+import {
+  accents,
+  applyAccent,
+  DEFAULT_ACCENT,
+  loadAccent,
+  saveAccent,
+} from "../theme/accents";
 
-// Header button that lets visitors pick the site's accent color
-export function AccentPicker() {
+// Header button that lets visitors pick the site's accent color.
+export function AccentPicker(): React.JSX.Element {
   const [current, setCurrent] = useState(DEFAULT_ACCENT);
 
-  // Apply the saved pick after mount, so server and client HTML match
+  // Apply the saved pick after mount, so server and client HTML match.
   useEffect(() => {
     const saved = loadAccent();
     setCurrent(saved);
@@ -38,7 +44,15 @@ export function AccentPicker() {
         <IconButton
           aria-label="Pick accent color"
           variant="ghost"
-          icon={<Box boxSize="18px" borderRadius="full" bg="brand.500" border="2px solid" borderColor="whiteAlpha.700" />}
+          icon={
+            <Box
+              boxSize="18px"
+              borderRadius="full"
+              bg="brand.500"
+              border="2px solid"
+              borderColor="whiteAlpha.700"
+            />
+          }
         />
       </PopoverTrigger>
       <PopoverContent w="auto">
@@ -61,7 +75,9 @@ export function AccentPicker() {
                   borderColor={current === a.id ? "gray.400" : "transparent"}
                   _hover={{ transform: "scale(1.1)" }}
                   transition="transform 0.15s"
-                  onClick={() => pick(a.id)}
+                  onClick={() => {
+                    pick(a.id);
+                  }}
                 />
               </Tooltip>
             ))}

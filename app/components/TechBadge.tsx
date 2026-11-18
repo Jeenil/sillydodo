@@ -1,10 +1,18 @@
 "use client";
 
-import { Box, HStack, Image, Link, Text, useColorModeValue } from "@chakra-ui/react";
-import { tech, type Tech, type TechKey } from "../data/tech";
+import {
+  Box,
+  HStack,
+  Image,
+  Link,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import type { Tech, TechKey } from "../data/tech";
+import { tech } from "../data/tech";
 
-// A tech chip in the tech's brand color that links to its official docs
-export function TechBadge({ id }: { id: TechKey }) {
+// A tech chip in the tech's brand color that links to its official docs.
+export function TechBadge({ id }: { id: TechKey }): React.JSX.Element {
   const t: Tech = tech[id];
   const bg = useColorModeValue("white", "whiteAlpha.100");
 
@@ -25,7 +33,7 @@ export function TechBadge({ id }: { id: TechKey }) {
         borderColor={t.color}
         bg={bg}
       >
-        {t.logo ? (
+        {t.logo !== undefined && t.logo !== "" ? (
           <Image src={t.logo} alt="" boxSize="14px" />
         ) : (
           <Box boxSize="8px" borderRadius="full" bg={t.color} />

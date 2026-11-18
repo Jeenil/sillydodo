@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
@@ -13,18 +14,32 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 
-import { roles, workProjects, type WorkProject } from "../../data/projects";
+import type { WorkProject } from "../../data/projects";
+import { roles, workProjects } from "../../data/projects";
 import { MermaidDiagram } from "../MermaidDiagram";
 import { TechBadge } from "../TechBadge";
 
-function WorkCard({ name, summary, metric, status, details, lesson, diagram, tech }: WorkProject) {
+function hasText(value: string | undefined): value is string {
+  return value !== undefined && value !== "";
+}
+
+function WorkCard({
+  name,
+  summary,
+  metric,
+  status,
+  details,
+  lesson,
+  diagram,
+  tech,
+}: WorkProject) {
   const { isOpen, onToggle } = useDisclosure();
   const cardBg = useColorModeValue("white", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.700");
   const diagramBg = useColorModeValue("gray.50", "gray.900");
-  const hasMore = Boolean(details?.length || lesson || diagram);
+  const hasMore =
+    (details?.length ?? 0) > 0 || hasText(lesson) || hasText(diagram);
 
   return (
     <Flex
@@ -50,7 +65,7 @@ function WorkCard({ name, summary, metric, status, details, lesson, diagram, tec
         <Heading as="h3" size="sm">
           {name}
         </Heading>
-        {status && <Badge colorScheme="brand">{status}</Badge>}
+        {hasText(status) && <Badge colorScheme="brand">{status}</Badge>}
       </Flex>
       <Text color="gray.600" _dark={{ color: "gray.400" }} mb={3}>
         {summary}
@@ -76,12 +91,18 @@ function WorkCard({ name, summary, metric, status, details, lesson, diagram, tec
                 </Box>
               )}
               {/* Mermaid sizes diagrams from the visible container, so only render when open */}
-              {diagram && isOpen && (
-                <Box bg={diagramBg} border="1px" borderColor={borderColor} borderRadius="md" p={4}>
+              {hasText(diagram) && isOpen && (
+                <Box
+                  bg={diagramBg}
+                  border="1px"
+                  borderColor={borderColor}
+                  borderRadius="md"
+                  p={4}
+                >
                   <MermaidDiagram chart={diagram.trim()} />
                 </Box>
               )}
-              {lesson && (
+              {hasText(lesson) && (
                 <Text fontSize="sm" color="gray.500">
                   <strong>Next time:</strong> {lesson}
                 </Text>
@@ -105,7 +126,7 @@ function WorkCard({ name, summary, metric, status, details, lesson, diagram, tec
   );
 }
 
-export function WorkSection() {
+export function WorkSection(): React.JSX.Element {
   return (
     <VStack align="stretch" spacing={10} maxW="1100px">
       <Box>
@@ -113,7 +134,8 @@ export function WorkSection() {
           Work
         </Heading>
         <Text fontSize="lg" color="gray.500">
-          What I&apos;ve built and led, newest role first. Open a card for the details.
+          What I&apos;ve built and led, newest role first. Open a card for the
+          details.
         </Text>
       </Box>
 
@@ -127,7 +149,11 @@ export function WorkSection() {
               {role.dates}
             </Text>
           </Flex>
-          <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={4} alignItems="start">
+          <SimpleGrid
+            columns={{ base: 1, lg: 2 }}
+            spacing={4}
+            alignItems="start"
+          >
             {workProjects
               .filter((p) => p.role === role.id)
               .map((p) => (

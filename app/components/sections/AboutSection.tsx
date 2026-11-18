@@ -13,14 +13,21 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { lessonsLearned } from "../../data/projects";
+import { useNavigation } from "../../hooks/useNavigation";
 
 const STU_INTERVIEW =
   "https://www.undertheradarmag.com/interviews/king_gizzard_the_lizard_wizards_stu_mackenzie_on_butterfly_3000_and_their_i/";
 
-// Exact quotes from Stu Mackenzie's 2021 Under the Radar interview
+// Exact quotes from Stu Mackenzie's 2021 Under the Radar interview.
 function StuQuote({ children }: { children: string }) {
   return (
-    <Box as="figure" mt={4} pl={4} borderLeft="3px solid" borderColor="lizard.500">
+    <Box
+      as="figure"
+      mt={4}
+      pl={4}
+      borderLeft="3px solid"
+      borderColor="lizard.500"
+    >
       <Text as="blockquote" fontStyle="italic">
         &ldquo;{children}&rdquo;
       </Text>
@@ -33,9 +40,8 @@ function StuQuote({ children }: { children: string }) {
     </Box>
   );
 }
-import { useNavigation } from "../../hooks/useNavigation";
 
-// Headline numbers, matching the resume
+// Headline numbers, matching the resume.
 const stats = [
   { value: "3,650", label: "external users moved to Entra ID" },
   { value: "36 TB", label: "file shares and archive moved to Azure" },
@@ -52,7 +58,7 @@ const learning = [
   "Logging and alerting",
 ];
 
-export function AboutSection() {
+export function AboutSection(): React.JSX.Element {
   const { setCurrentSection } = useNavigation();
   const cardBg = useColorModeValue("white", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.700");
@@ -64,22 +70,36 @@ export function AboutSection() {
           Hi! I&apos;m Jeenil 👋
         </Heading>
         <Text fontSize="xl" mb={2}>
-          Associate Systems Engineer working on Entra ID identity governance and Azure
-          infrastructure, built secure by default and try to keep it simple.
+          Associate Systems Engineer working on Entra ID identity governance and
+          Azure infrastructure, built secure by default and try to keep it
+          simple.
         </Text>
         <Text fontSize="lg" color="gray.500">
-          I took the long way here. I started in psychology, worked in a research lab, and studied
-          economics, with a minor in both. I joined IT support in 2021 and have kept learning my way
-          into engineering ever since.
+          I took the long way here. I started in psychology, worked in a
+          research lab, and studied economics, with a minor in both. I joined IT
+          support in 2021 and have kept learning my way into engineering ever
+          since.
         </Text>
         <StuQuote>
-          I&apos;ve tried to subscribe to the idea that if I don&apos;t like something, I don&apos;t understand it.
+          I&apos;ve tried to subscribe to the idea that if I don&apos;t like
+          something, I don&apos;t understand it.
         </StuQuote>
         <Flex gap={3} mt={6} flexWrap="wrap">
-          <Button colorScheme="brand" color="gray.900" onClick={() => setCurrentSection("work")}>
+          <Button
+            colorScheme="brand"
+            color="gray.900"
+            onClick={() => {
+              setCurrentSection("work");
+            }}
+          >
             See my work
           </Button>
-          <Button variant="outline" onClick={() => setCurrentSection("opensource")}>
+          <Button
+            variant="outline"
+            onClick={() => {
+              setCurrentSection("opensource");
+            }}
+          >
             Open source
           </Button>
         </Flex>
@@ -87,7 +107,14 @@ export function AboutSection() {
 
       <SimpleGrid columns={{ base: 2, md: 4 }} spacing={4}>
         {stats.map((s) => (
-          <Box key={s.label} bg={cardBg} border="1px" borderColor={borderColor} borderRadius="lg" p={4}>
+          <Box
+            key={s.label}
+            bg={cardBg}
+            border="1px"
+            borderColor={borderColor}
+            borderRadius="lg"
+            p={4}
+          >
             <Text fontSize="2xl" fontWeight="bold" lineHeight="1.2">
               {s.value}
             </Text>
@@ -107,7 +134,8 @@ export function AboutSection() {
         </Text>
         <Box mb={4}>
           <StuQuote>
-            It&apos;s not about how good anyone is. It&apos;s about how well you play together.
+            It&apos;s not about how good anyone is. It&apos;s about how well you
+            play together.
           </StuQuote>
         </Box>
         <VStack align="stretch" spacing={2}>
@@ -125,7 +153,16 @@ export function AboutSection() {
         </Heading>
         <Flex gap={2} flexWrap="wrap">
           {learning.map((l) => (
-            <Badge key={l} variant="subtle" colorScheme="lizard" px={3} py={1} borderRadius="full" textTransform="none" fontSize="sm">
+            <Badge
+              key={l}
+              variant="subtle"
+              colorScheme="lizard"
+              px={3}
+              py={1}
+              borderRadius="full"
+              textTransform="none"
+              fontSize="sm"
+            >
               {l}
             </Badge>
           ))}

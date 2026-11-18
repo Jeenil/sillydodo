@@ -1,6 +1,5 @@
-// One entry per technology: brand color, logo and official docs.
-// Logos are from devicon (MIT) and live in public/logos. Techs without an
-// official logo there show a color dot instead.
+// One entry per technology: brand color, logo and official docs. Logos are from devicon (MIT) and
+// live in public/logos. Techs without an official logo there show a color dot instead.
 
 export interface Tech {
   label: string;
@@ -41,7 +40,8 @@ export const tech = {
   activeDirectory: {
     label: "Active Directory",
     color: "#00A4EF",
-    docsUrl: "https://learn.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview",
+    docsUrl:
+      "https://learn.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview",
   },
   defender: {
     label: "Microsoft Defender",
@@ -56,7 +56,8 @@ export const tech = {
   logAnalytics: {
     label: "Azure Log Analytics",
     color: "#0078D4",
-    docsUrl: "https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-overview",
+    docsUrl:
+      "https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-overview",
     logo: "/logos/azure.svg",
   },
   kubernetes: {

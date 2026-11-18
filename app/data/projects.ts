@@ -1,5 +1,5 @@
-// All project content for the site lives here, so adding a project is a data
-// change only. Keep work entries generic: no internal names or systems.
+// All project content for the site lives here, so adding a project is a data change only. Keep work
+// entries generic: no internal names or systems.
 
 import type { TechKey } from "./tech";
 
@@ -11,37 +11,50 @@ export interface Role {
   dates: string;
 }
 
-// Same order and titles as the resume
+// Same order and titles as the resume.
 export const roles: Role[] = [
-  { id: "engineer", title: "Associate Systems Engineer", dates: "Nov 2024 – Present" },
-  { id: "senior", title: "Senior Support Specialist", dates: "Nov 2023 – Nov 2024" },
-  { id: "support", title: "System Support Specialist", dates: "Apr 2021 – Nov 2023" },
+  {
+    id: "engineer",
+    title: "Associate Systems Engineer",
+    dates: "Nov 2024 – Present",
+  },
+  {
+    id: "senior",
+    title: "Senior Support Specialist",
+    dates: "Nov 2023 – Nov 2024",
+  },
+  {
+    id: "support",
+    title: "System Support Specialist",
+    dates: "Apr 2021 – Nov 2023",
+  },
 ];
 
 export interface WorkProject {
   name: string;
   role: RoleId;
-  // One line, always visible on the card
+  // One line, always visible on the card.
   summary: string;
-  // Headline number shown big on the card
+  // Headline number shown big on the card.
   metric?: { value: string; label: string };
   status?: string;
-  // Shown when the card is expanded
+  // Shown when the card is expanded.
   details?: string[];
-  // What I learned or would do differently next time
+  // What I learned or would do differently next time.
   lesson?: string;
-  // Mermaid chart, only where a picture explains more than the text
+  // Mermaid chart, only where a picture explains more than the text.
   diagram?: string;
   tech?: TechKey[];
 }
 
-// Add new entries here as projects wrap up
+// Add new entries here as projects wrap up.
 export const workProjects: WorkProject[] = [
   {
     name: "Onboarding and Access as Code",
     role: "engineer",
     tech: ["entra", "terraform", "graph"],
-    summary: "New hires get the right access on day one, based on their department, location and title.",
+    summary:
+      "New hires get the right access on day one, based on their department, location and title.",
     details: [
       "The HR system creates each new hire's accounts automatically.",
       "Entitlement Management rules in Terraform assign access packages from department, location and title.",
@@ -64,7 +77,8 @@ flowchart LR
     role: "engineer",
     tech: ["entra", "graph", "powershell"],
     metric: { value: "3,650", label: "external users moved" },
-    summary: "Moved users across ~197 client organizations from email-based login to Entra ID.",
+    summary:
+      "Moved users across ~197 client organizations from email-based login to Entra ID.",
     details: [
       "Users are defined in a config file in Git; a pipeline invites them and grants app access through access packages.",
       "A sync every 2 hours keeps access current, with retries when Microsoft Graph throttles.",
@@ -76,7 +90,8 @@ flowchart LR
     name: "Defender Policy Promotion",
     role: "engineer",
     tech: ["defender"],
-    summary: "Security policy changes move through dev, staging and prod, so they're tested on a small group before they reach every device.",
+    summary:
+      "Security policy changes move through dev, staging and prod, so they're tested on a small group before they reach every device.",
     details: [
       "Each change lands in dev first, then staging, then prod.",
       "Problems show up on a few test devices instead of the whole fleet.",
@@ -87,7 +102,8 @@ flowchart LR
     role: "engineer",
     tech: ["azure", "kubernetes", "activeDirectory"],
     metric: { value: "36 TB", label: "migrated, zero data loss" },
-    summary: "Moved on-prem file shares to Azure Files with least-privilege access.",
+    summary:
+      "Moved on-prem file shares to Azure Files with least-privilege access.",
     details: [
       "About 16 TB of active file shares plus 20 TB of archive data.",
       "Private endpoints and Kerberos sign-in instead of storage keys.",
@@ -122,13 +138,15 @@ flowchart LR
     role: "engineer",
     tech: ["kubernetes", "azure"],
     metric: { value: "585 GB+", label: "of transfers handled" },
-    summary: "Designed file and HL7 data transfers across on-prem and Azure, then moved them to Kubernetes.",
+    summary:
+      "Designed file and HL7 data transfers across on-prem and Azure, then moved them to Kubernetes.",
   },
   {
     name: "CI/CD Guardrails",
     role: "engineer",
     tech: ["powershell", "terraform"],
-    summary: "Every change is linted, validated and safety-checked before a teammate reviews it.",
+    summary:
+      "Every change is linted, validated and safety-checked before a teammate reviews it.",
     details: [
       "Linting for scripts and config files.",
       "Checks that block changes to protected locations.",
@@ -139,14 +157,17 @@ flowchart LR
     name: "Scheduled PowerShell on AKS",
     role: "engineer",
     tech: ["powershell", "kubernetes", "azure"],
-    summary: "Scheduled scripts run as Kubernetes CronJobs and sign in with workload identity, not stored secrets.",
-    lesson: "A stale container image ran in production. Next time I'll pin immutable image tags from day one.",
+    summary:
+      "Scheduled scripts run as Kubernetes CronJobs and sign in with workload identity, not stored secrets.",
+    lesson:
+      "A stale container image ran in production. Next time I'll pin immutable image tags from day one.",
   },
   {
     name: "Active Directory as Code",
     role: "engineer",
     tech: ["activeDirectory", "powershell"],
-    summary: "Service accounts and gMSAs are managed through pipelines instead of by hand.",
+    summary:
+      "Service accounts and gMSAs are managed through pipelines instead of by hand.",
   },
   {
     name: "Onboarding and Offboarding Automation",
@@ -160,21 +181,24 @@ flowchart LR
     role: "senior",
     tech: ["azure", "powershell"],
     metric: { value: "10 TB+", label: "migrated" },
-    summary: "Moved on-prem file servers and VMs to Azure Storage and SharePoint Online, 2 weeks ahead of schedule.",
+    summary:
+      "Moved on-prem file servers and VMs to Azure Storage and SharePoint Online, 2 weeks ahead of schedule.",
   },
   {
     name: "Access Cleanup",
     role: "senior",
     tech: ["activeDirectory", "azure"],
     metric: { value: "50+", label: "file shares locked down" },
-    summary: "Tightened permissions across file shares, 30+ servers and 5+ storage accounts.",
+    summary:
+      "Tightened permissions across file shares, 30+ servers and 5+ storage accounts.",
   },
   {
     name: "Endpoint Management",
     role: "support",
     tech: ["intune"],
     metric: { value: "3h → 45m", label: "device setup" },
-    summary: "Set up 700+ Windows and macOS laptops and reached 100% LAPS, BitLocker and MDM compliance in 3 months.",
+    summary:
+      "Set up 700+ Windows and macOS laptops and reached 100% LAPS, BitLocker and MDM compliance in 3 months.",
   },
 ];
 
@@ -194,21 +218,21 @@ export interface Repo {
   name: string;
   repoUrl: string;
   description: string;
-  // First entry sets the card's accent color and logo
+  // First entry sets the card's accent color and logo.
   tech: TechKey[];
-  // Plain labels that aren't a technology
+  // Plain labels that aren't a technology.
   tags?: string[];
   registryUrl?: string;
   registryLabel?: string;
   registryColor?: string;
   extraLink?: { label: string; url: string };
-  // Published packages are listed first, apart from side projects
+  // Published packages are listed first, apart from side projects.
   published?: boolean;
-  // Fixes sent to other projects while building this one
-  upstream?: { label: string; url: string; merged: boolean }[];
+  // Fixes sent to other projects while building this one.
+  upstream?: Array<{ label: string; url: string; merged: boolean }>;
 }
 
-// Public GitHub repos only; private repos 404 for visitors
+// Public GitHub repos only; private repos 404 for visitors.
 export const repos: Repo[] = [
   {
     name: "terraform-azuread-identity-governance",
@@ -217,7 +241,8 @@ export const repos: Repo[] = [
       "Terraform module for Entra ID Entitlement Management: catalogs, access packages, auto-assignment policies and SharePoint/Teams resources. Runs a real identity governance setup; 22 releases so far.",
     tech: ["terraform", "entra", "graph"],
     tags: ["Identity Governance"],
-    registryUrl: "https://registry.terraform.io/modules/Jeenil/identity-governance/azuread/latest",
+    registryUrl:
+      "https://registry.terraform.io/modules/Jeenil/identity-governance/azuread/latest",
     registryLabel: "Terraform Registry",
     published: true,
     registryColor: "purple",
@@ -237,7 +262,8 @@ export const repos: Repo[] = [
         merged: true,
       },
       {
-        label: "HashiCorp azuread provider: AadApplication and SharePointOnline associations",
+        label:
+          "HashiCorp azuread provider: AadApplication and SharePointOnline associations",
         url: "https://github.com/hashicorp/terraform-provider-azuread/pull/1880",
         merged: false,
       },
@@ -272,8 +298,7 @@ export const repos: Repo[] = [
   {
     name: "casio-lk-keyboard-learning-guide",
     repoUrl: "https://github.com/Jeenil/casio-lk-keyboard-learning-guide",
-    description:
-      "My step-by-step notes for learning keyboard on a Casio LK.",
+    description: "My step-by-step notes for learning keyboard on a Casio LK.",
     tech: ["markdown"],
     tags: ["Music", "Documentation"],
   },
